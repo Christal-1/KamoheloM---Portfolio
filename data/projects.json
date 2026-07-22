@@ -1,0 +1,55 @@
+{
+  "projects": [
+    {
+      "id": "brand-strategy",
+      "number": "01",
+      "title": "Repositioning a Brand",
+      "category": "Brand Strategy",
+      "status": "Portfolio project / mock case study",
+      "summary": "A strategic exploration of how customer insight can create a sharper brand position and a stronger connection with a new audience.",
+      "sections": [
+        "Challenge",
+        "Research",
+        "Audience",
+        "Positioning",
+        "Strategic Direction",
+        "Outcome"
+      ],
+      "folder": "projects/brand-strategy/"
+    },
+    {
+      "id": "digital-campaign",
+      "number": "02",
+      "title": "From Attention to Action",
+      "category": "Digital Campaign",
+      "status": "Portfolio project / mock campaign",
+      "summary": "A multi-channel campaign concept designed around the customer journey, from awareness through to action.",
+      "sections": [
+        "Objective",
+        "Audience",
+        "Campaign Idea",
+        "Content Plan",
+        "Channel Strategy",
+        "Measurement"
+      ],
+      "folder": "projects/digital-campaign/"
+    },
+    {
+      "id": "marketing-analytics",
+      "number": "03",
+      "title": "Data That Moves",
+      "category": "Marketing Intelligence",
+      "status": "Portfolio project / analytics concept",
+      "summary": "An exploration of how marketing performance data can become insight, and how insight can support the next strategic decision.",
+      "sections": [
+        "Business Question",
+        "Data",
+        "KPIs",
+        "Analysis",
+        "Dashboard",
+        "Recommendations"
+      ],
+      "folder": "projects/marketing-analytics/"
+    }
+  ]
+}
