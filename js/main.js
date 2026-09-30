@@ -132,12 +132,19 @@ document.addEventListener("DOMContentLoaded", () => {
     CONTACT FORM — GMAIL
     ==========================================
 
+    The form collects the visitor's:
+    - Name
+    - Email
+
+    Clicking "Send Message" opens Gmail
+    with a professional email already prepared.
+
+    The visitor can review the email and
+    manually click Send.
+
     No EmailJS.
     No Outlook.
     No mailto.
-
-    The form opens Gmail directly in the
-    browser with the message already prepared.
     ==========================================
     */
 
@@ -173,20 +180,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         '[name="email"]'
                     );
 
-                const messageInput =
-                    contactForm.querySelector(
-                        '[name="message"]'
-                    );
-
 
                 const name =
                     nameInput?.value.trim() || "";
 
                 const email =
                     emailInput?.value.trim() || "";
-
-                const message =
-                    messageInput?.value.trim() || "";
 
 
                 /*
@@ -195,10 +194,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 ------------------------------------------
                 */
 
-                if (!name || !email || !message) {
+                if (!name || !email) {
 
                     showFormPopup(
-                        "Please complete all fields.",
+                        "Please enter your name and email address.",
                         true
                     );
 
@@ -248,24 +247,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 */
 
                 const subject =
-                    `Portfolio Contact - Message from ${name}`;
+                    `Portfolio Enquiry — ${name}`;
 
 
                 /*
                 ------------------------------------------
-                GMAIL MESSAGE BODY
+                PROFESSIONAL EMAIL BODY
                 ------------------------------------------
                 */
 
                 const body =
-`Hello Kamohelo,
+`Hi Kamohelo,
 
-My name is ${name}.
+I hope you're doing well.
 
-Email: ${email}
+My name is ${name}, and I came across your portfolio. I’d like to connect with you and learn more about your work and opportunities to collaborate.
 
-Message:
-${message}
+You can reach me at ${email}.
+
+I look forward to hearing from you.
 
 Kind regards,
 ${name}`;
@@ -291,7 +291,7 @@ ${name}`;
                 */
 
                 showFormPopup(
-                    "Gmail is opening with your message ready to send."
+                    "Gmail is opening with your email ready to send."
                 );
 
 
