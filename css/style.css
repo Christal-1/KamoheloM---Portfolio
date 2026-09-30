@@ -140,7 +140,7 @@ body:hover .cursor-glow {
 
 
 .brand-name {
-    font: 50000 10px var(--mono);
+    font: 500 10px var(--mono);
     letter-spacing: 0.08em;
 }
 
