@@ -123,15 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /*
     ==========================================
-    CONTACT FORM
-    ==========================================
-
-    No EmailJS.
-    No Outlook.
-    No mailto.
-
-    The form opens Gmail directly in the
-    browser with the message already prepared.
+    CONTACT FORM — GMAIL
     ==========================================
     */
 
@@ -146,7 +138,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         contactForm.addEventListener(
             "submit",
-            event => {
+            function (event) {
+
+                /*
+                ------------------------------------------
+                PREVENT NORMAL FORM SUBMISSION
+                ------------------------------------------
+                */
 
                 event.preventDefault();
 
@@ -158,17 +156,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 */
 
                 const nameInput =
-                    contactForm.querySelector(
+                    this.querySelector(
                         '[name="name"]'
                     );
 
                 const emailInput =
-                    contactForm.querySelector(
+                    this.querySelector(
                         '[name="email"]'
                     );
 
                 const messageInput =
-                    contactForm.querySelector(
+                    this.querySelector(
                         '[name="message"]'
                     );
 
@@ -203,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 /*
                 ------------------------------------------
-                BASIC EMAIL VALIDATION
+                EMAIL VALIDATION
                 ------------------------------------------
                 */
 
@@ -227,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 /*
                 ------------------------------------------
-                YOUR RECEIVING EMAIL
+                RECEIVING EMAIL
                 ------------------------------------------
                 */
 
@@ -237,36 +235,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 /*
                 ------------------------------------------
-                GMAIL SUBJECT
+                PROFESSIONAL EMAIL SUBJECT
                 ------------------------------------------
                 */
 
                 const subject =
-                    encodeURIComponent(
-                        `Portfolio Contact - Message from ${name}`
-                    );
+                    `New Portfolio Enquiry — ${name}`;
 
 
                 /*
                 ------------------------------------------
-                GMAIL MESSAGE BODY
+                PROFESSIONAL EMAIL BODY
                 ------------------------------------------
                 */
 
                 const body =
-                    encodeURIComponent(
 `Hello Kamohelo,
 
-My name is ${name}.
+You have received a new message through your portfolio website.
 
+CONTACT DETAILS
+----------------
+Name: ${name}
 Email: ${email}
 
-Message:
+MESSAGE
+----------------
 ${message}
 
 Kind regards,
-${name}`
-                    );
+${name}
+
+Sent via Kamohelo M.'s Portfolio Website`;
 
 
                 /*
@@ -274,24 +274,27 @@ ${name}`
                 GMAIL COMPOSE URL
                 ------------------------------------------
 
-                This opens Gmail in the browser instead
-                of using the computer's default email
-                application such as Outlook.
+                Opens Gmail directly in the browser
+                instead of opening Outlook or another
+                desktop email application.
                 ------------------------------------------
                 */
 
                 const gmailUrl =
-                    `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${subject}&body=${body}`;
+                    `https://mail.google.com/mail/?view=cm&fs=1` +
+                    `&to=${encodeURIComponent(recipient)}` +
+                    `&su=${encodeURIComponent(subject)}` +
+                    `&body=${encodeURIComponent(body)}`;
 
 
                 /*
                 ------------------------------------------
-                SHOW SUCCESS MESSAGE
+                SHOW USER FEEDBACK
                 ------------------------------------------
                 */
 
                 showFormPopup(
-                    "Gmail is opening with your message ready to send."
+                    "Opening Gmail…"
                 );
 
 
@@ -319,8 +322,9 @@ ${name}`
                 OPEN GMAIL
                 ------------------------------------------
 
-                Using window.open ensures Gmail opens
-                in the browser rather than Outlook.
+                Gmail opens in a new browser tab with
+                the recipient, subject and message already
+                populated.
                 ------------------------------------------
                 */
 
@@ -338,7 +342,7 @@ ${name}`
                 ------------------------------------------
 
                 If the browser blocks the new tab,
-                navigate the current page to Gmail.
+                open Gmail in the current tab instead.
                 ------------------------------------------
                 */
 
@@ -347,6 +351,8 @@ ${name}`
                     window.location.href =
                         gmailUrl;
 
+                    return;
+
                 }
 
 
@@ -354,9 +360,16 @@ ${name}`
                 ------------------------------------------
                 RESET FORM
                 ------------------------------------------
+
+                The form is cleared after Gmail opens.
+                ------------------------------------------
                 */
 
-                contactForm.reset();
+                setTimeout(() => {
+
+                    contactForm.reset();
+
+                }, 1000);
 
             }
         );
@@ -378,9 +391,21 @@ ${name}`
         if (!formPopup) return;
 
 
+        /*
+        ------------------------------------------
+        SET MESSAGE
+        ------------------------------------------
+        */
+
         formPopup.textContent =
             message;
 
+
+        /*
+        ------------------------------------------
+        ERROR STATE
+        ------------------------------------------
+        */
 
         formPopup.classList.toggle(
             "error",
@@ -388,13 +413,20 @@ ${name}`
         );
 
 
+        /*
+        ------------------------------------------
+        SHOW POPUP
+        ------------------------------------------
+        */
+
         formPopup.classList.add(
             "show"
         );
 
 
         /*
-        Support the existing CSS as well.
+        Support existing CSS
+        ------------------------------------------
         */
 
         formPopup.style.display =
@@ -404,10 +436,22 @@ ${name}`
             "1";
 
 
+        /*
+        ------------------------------------------
+        CLEAR PREVIOUS TIMER
+        ------------------------------------------
+        */
+
         clearTimeout(
             formPopup.hideTimer
         );
 
+
+        /*
+        ------------------------------------------
+        HIDE AFTER 4 SECONDS
+        ------------------------------------------
+        */
 
         formPopup.hideTimer =
             setTimeout(() => {
