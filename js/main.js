@@ -6,14 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
     ==========================================
     */
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav");
+    const menuToggle =
+        document.querySelector(".menu-toggle");
+
+    const nav =
+        document.querySelector(".nav");
+
 
     menuToggle?.addEventListener("click", () => {
 
         if (!nav) return;
 
-        const isOpen = nav.classList.toggle("open");
+        const isOpen =
+            nav.classList.toggle("open");
 
         menuToggle.setAttribute(
             "aria-expanded",
@@ -47,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const cursorGlow =
         document.querySelector(".cursor-glow");
+
 
     window.addEventListener("mousemove", event => {
 
@@ -123,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /*
     ==========================================
-    CONTACT FORM
+    CONTACT FORM — GMAIL
     ==========================================
 
     No EmailJS.
@@ -242,9 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 */
 
                 const subject =
-                    encodeURIComponent(
-                        `Portfolio Contact - Message from ${name}`
-                    );
+                    `Portfolio Contact - Message from ${name}`;
 
 
                 /*
@@ -254,7 +258,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 */
 
                 const body =
-                    encodeURIComponent(
 `Hello Kamohelo,
 
 My name is ${name}.
@@ -265,23 +268,20 @@ Message:
 ${message}
 
 Kind regards,
-${name}`
-                    );
+${name}`;
 
 
                 /*
                 ------------------------------------------
-                GMAIL COMPOSE URL
-                ------------------------------------------
-
-                This opens Gmail in the browser instead
-                of using the computer's default email
-                application such as Outlook.
+                CREATE GMAIL COMPOSE URL
                 ------------------------------------------
                 */
 
                 const gmailUrl =
-                    `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${subject}&body=${body}`;
+                    `https://mail.google.com/mail/?view=cm&fs=1` +
+                    `&to=${encodeURIComponent(recipient)}` +
+                    `&su=${encodeURIComponent(subject)}` +
+                    `&body=${encodeURIComponent(body)}`;
 
 
                 /*
@@ -318,10 +318,6 @@ ${name}`
                 ------------------------------------------
                 OPEN GMAIL
                 ------------------------------------------
-
-                Using window.open ensures Gmail opens
-                in the browser rather than Outlook.
-                ------------------------------------------
                 */
 
                 const gmailWindow =
@@ -347,6 +343,8 @@ ${name}`
                     window.location.href =
                         gmailUrl;
 
+                    return;
+
                 }
 
 
@@ -356,7 +354,11 @@ ${name}`
                 ------------------------------------------
                 */
 
-                contactForm.reset();
+                setTimeout(() => {
+
+                    contactForm.reset();
+
+                }, 1000);
 
             }
         );
