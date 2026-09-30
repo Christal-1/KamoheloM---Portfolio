@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     menuToggle?.addEventListener("click", () => {
 
+        if (!nav) return;
+
         const isOpen = nav.classList.toggle("open");
 
         menuToggle.setAttribute(
@@ -25,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         link.addEventListener("click", () => {
 
-            nav.classList.remove("open");
+            nav?.classList.remove("open");
 
             menuToggle?.setAttribute(
                 "aria-expanded",
@@ -43,14 +45,18 @@ document.addEventListener("DOMContentLoaded", () => {
     ==========================================
     */
 
-    const cursorGlow = document.querySelector(".cursor-glow");
+    const cursorGlow =
+        document.querySelector(".cursor-glow");
 
     window.addEventListener("mousemove", event => {
 
         if (!cursorGlow) return;
 
-        cursorGlow.style.left = `${event.clientX}px`;
-        cursorGlow.style.top = `${event.clientY}px`;
+        cursorGlow.style.left =
+            `${event.clientX}px`;
+
+        cursorGlow.style.top =
+            `${event.clientY}px`;
 
     });
 
@@ -61,33 +67,58 @@ document.addEventListener("DOMContentLoaded", () => {
     ==========================================
     */
 
-    const revealObserver = new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if (!entry.isIntersecting) return;
-
-                entry.target.classList.add("visible");
-
-                revealObserver.unobserve(entry.target);
-
-            });
-
-        },
-        {
-            threshold: 0.12
-        }
-    );
+    const revealElements =
+        document.querySelectorAll(".reveal");
 
 
-    document
-        .querySelectorAll(".reveal")
-        .forEach(element => {
+    if ("IntersectionObserver" in window) {
+
+        const revealObserver =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+                        entry.target.classList.add(
+                            "visible"
+                        );
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        revealElements.forEach(element => {
 
             revealObserver.observe(element);
 
         });
+
+    } else {
+
+        /*
+        Fallback for older browsers
+        */
+
+        revealElements.forEach(element => {
+
+            element.classList.add("visible");
+
+        });
+
+    }
 
 
     /*
@@ -95,12 +126,12 @@ document.addEventListener("DOMContentLoaded", () => {
     CONTACT FORM
     ==========================================
 
-    This version does NOT use EmailJS.
+    No EmailJS.
+    No Outlook.
+    No mailto.
 
-    When the visitor submits the form, their
-    default email application opens with the
-    recipient, subject and message already
-    populated.
+    The form opens Gmail directly in the
+    browser with the message already prepared.
     ==========================================
     */
 
@@ -115,42 +146,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
         contactForm.addEventListener(
             "submit",
-            function (event) {
+            event => {
 
                 event.preventDefault();
 
 
                 /*
-                Get form values
+                ------------------------------------------
+                GET FORM VALUES
+                ------------------------------------------
                 */
 
+                const nameInput =
+                    contactForm.querySelector(
+                        '[name="name"]'
+                    );
+
+                const emailInput =
+                    contactForm.querySelector(
+                        '[name="email"]'
+                    );
+
+                const messageInput =
+                    contactForm.querySelector(
+                        '[name="message"]'
+                    );
+
+
                 const name =
-                    contactForm
-                        .querySelector('[name="name"]')
-                        .value
-                        .trim();
+                    nameInput?.value.trim() || "";
 
                 const email =
-                    contactForm
-                        .querySelector('[name="email"]')
-                        .value
-                        .trim();
+                    emailInput?.value.trim() || "";
 
                 const message =
-                    contactForm
-                        .querySelector('[name="message"]')
-                        .value
-                        .trim();
+                    messageInput?.value.trim() || "";
 
 
                 /*
-                Validate fields
+                ------------------------------------------
+                VALIDATION
+                ------------------------------------------
                 */
 
                 if (!name || !email || !message) {
 
-                    alert(
-                        "Please complete all fields before sending your message."
+                    showFormPopup(
+                        "Please complete all fields.",
+                        true
                     );
 
                     return;
@@ -159,7 +202,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 /*
-                Your receiving email address
+                ------------------------------------------
+                BASIC EMAIL VALIDATION
+                ------------------------------------------
+                */
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                if (!emailPattern.test(email)) {
+
+                    showFormPopup(
+                        "Please enter a valid email address.",
+                        true
+                    );
+
+                    emailInput?.focus();
+
+                    return;
+
+                }
+
+
+                /*
+                ------------------------------------------
+                YOUR RECEIVING EMAIL
+                ------------------------------------------
                 */
 
                 const recipient =
@@ -167,7 +236,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 /*
-                Create email subject
+                ------------------------------------------
+                GMAIL SUBJECT
+                ------------------------------------------
                 */
 
                 const subject =
@@ -177,7 +248,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 /*
-                Create email body
+                ------------------------------------------
+                GMAIL MESSAGE BODY
+                ------------------------------------------
                 */
 
                 const body =
@@ -197,33 +270,35 @@ ${name}`
 
 
                 /*
-                Build mailto link
+                ------------------------------------------
+                GMAIL COMPOSE URL
+                ------------------------------------------
+
+                This opens Gmail in the browser instead
+                of using the computer's default email
+                application such as Outlook.
+                ------------------------------------------
                 */
 
-                const mailtoLink =
-                    `mailto:${recipient}?subject=${subject}&body=${body}`;
+                const gmailUrl =
+                    `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${subject}&body=${body}`;
 
 
                 /*
-                Show confirmation
+                ------------------------------------------
+                SHOW SUCCESS MESSAGE
+                ------------------------------------------
                 */
 
-                if (formPopup) {
-
-                    formPopup.textContent =
-                        "Your email app is opening...";
-
-                    formPopup.style.display =
-                        "block";
-
-                    formPopup.style.opacity =
-                        "1";
-
-                }
+                showFormPopup(
+                    "Gmail is opening with your message ready to send."
+                );
 
 
                 /*
-                Confetti effect
+                ------------------------------------------
+                CONFETTI
+                ------------------------------------------
                 */
 
                 if (typeof confetti === "function") {
@@ -240,41 +315,119 @@ ${name}`
 
 
                 /*
-                Open email application
+                ------------------------------------------
+                OPEN GMAIL
+                ------------------------------------------
+
+                Using window.open ensures Gmail opens
+                in the browser rather than Outlook.
+                ------------------------------------------
                 */
 
-                window.location.href =
-                    mailtoLink;
+                const gmailWindow =
+                    window.open(
+                        gmailUrl,
+                        "_blank",
+                        "noopener,noreferrer"
+                    );
 
 
                 /*
-                Hide notification after a few seconds
+                ------------------------------------------
+                FALLBACK
+                ------------------------------------------
+
+                If the browser blocks the new tab,
+                navigate the current page to Gmail.
+                ------------------------------------------
                 */
 
-                if (formPopup) {
+                if (!gmailWindow) {
 
-                    setTimeout(() => {
-
-                        formPopup.style.transition =
-                            "opacity 0.5s ease";
-
-                        formPopup.style.opacity =
-                            "0";
-
-
-                        setTimeout(() => {
-
-                            formPopup.style.display =
-                                "none";
-
-                        }, 500);
-
-                    }, 3000);
+                    window.location.href =
+                        gmailUrl;
 
                 }
 
+
+                /*
+                ------------------------------------------
+                RESET FORM
+                ------------------------------------------
+                */
+
+                contactForm.reset();
+
             }
         );
+
+    }
+
+
+    /*
+    ==========================================
+    FORM POPUP
+    ==========================================
+    */
+
+    function showFormPopup(
+        message,
+        isError = false
+    ) {
+
+        if (!formPopup) return;
+
+
+        formPopup.textContent =
+            message;
+
+
+        formPopup.classList.toggle(
+            "error",
+            isError
+        );
+
+
+        formPopup.classList.add(
+            "show"
+        );
+
+
+        /*
+        Support the existing CSS as well.
+        */
+
+        formPopup.style.display =
+            "block";
+
+        formPopup.style.opacity =
+            "1";
+
+
+        clearTimeout(
+            formPopup.hideTimer
+        );
+
+
+        formPopup.hideTimer =
+            setTimeout(() => {
+
+                formPopup.classList.remove(
+                    "show"
+                );
+
+                formPopup.style.opacity =
+                    "0";
+
+
+                setTimeout(() => {
+
+                    formPopup.style.display =
+                        "none";
+
+                }, 300);
+
+            }, 4000);
 
     }
 
