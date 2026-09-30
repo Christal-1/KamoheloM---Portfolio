@@ -6,14 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
     ==========================================
     */
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav");
+    const menuToggle =
+        document.querySelector(".menu-toggle");
+
+    const nav =
+        document.querySelector(".nav");
+
 
     menuToggle?.addEventListener("click", () => {
 
         if (!nav) return;
 
-        const isOpen = nav.classList.toggle("open");
+        const isOpen =
+            nav.classList.toggle("open");
 
         menuToggle.setAttribute(
             "aria-expanded",
@@ -47,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const cursorGlow =
         document.querySelector(".cursor-glow");
+
 
     window.addEventListener("mousemove", event => {
 
@@ -114,7 +120,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         revealElements.forEach(element => {
 
-            element.classList.add("visible");
+            element.classList.add(
+                "visible"
+            );
 
         });
 
@@ -151,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 /*
                 ------------------------------------------
-                GET FORM VALUES
+                GET NAME + EMAIL
                 ------------------------------------------
                 */
 
@@ -165,11 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         '[name="email"]'
                     );
 
-                const messageInput =
-                    this.querySelector(
-                        '[name="message"]'
-                    );
-
 
                 const name =
                     nameInput?.value.trim() || "";
@@ -177,20 +180,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 const email =
                     emailInput?.value.trim() || "";
 
-                const message =
-                    messageInput?.value.trim() || "";
-
 
                 /*
                 ------------------------------------------
-                VALIDATION
+                REQUIRED FIELD VALIDATION
                 ------------------------------------------
                 */
 
-                if (!name || !email || !message) {
+                if (!name || !email) {
 
                     showFormPopup(
-                        "Please complete all fields.",
+                        "Please enter your name and email.",
                         true
                     );
 
@@ -235,48 +235,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 /*
                 ------------------------------------------
-                PROFESSIONAL EMAIL SUBJECT
+                SUBJECT
                 ------------------------------------------
                 */
 
                 const subject =
-                    `New Portfolio Enquiry — ${name}`;
+                    `Portfolio Enquiry — ${name}`;
 
 
                 /*
                 ------------------------------------------
-                PROFESSIONAL EMAIL BODY
+                EMAIL TEMPLATE
+                ------------------------------------------
+
+                This is the message that will already
+                be prepared when Gmail opens.
+
+                The visitor can edit it before sending.
                 ------------------------------------------
                 */
 
                 const body =
 `Hello Kamohelo,
 
-You have received a new message through your portfolio website.
+I hope you're doing well.
 
-CONTACT DETAILS
-----------------
-Name: ${name}
-Email: ${email}
+My name is ${name}, and I’m reaching out through your portfolio website.
 
-MESSAGE
-----------------
-${message}
+I’d love to connect with you and learn more about your work and services.
+
+Please feel free to get back to me at this email address.
 
 Kind regards,
 ${name}
-
-Sent via Kamohelo M.'s Portfolio Website`;
+${email}`;
 
 
                 /*
                 ------------------------------------------
-                GMAIL COMPOSE URL
+                CREATE GMAIL COMPOSE URL
                 ------------------------------------------
 
-                Opens Gmail directly in the browser
-                instead of opening Outlook or another
-                desktop email application.
+                Gmail opens directly in the browser.
+
+                It does NOT automatically send the email.
+                The visitor reviews it and clicks Send.
                 ------------------------------------------
                 */
 
@@ -289,12 +292,12 @@ Sent via Kamohelo M.'s Portfolio Website`;
 
                 /*
                 ------------------------------------------
-                SHOW USER FEEDBACK
+                USER FEEDBACK
                 ------------------------------------------
                 */
 
                 showFormPopup(
-                    "Opening Gmail…"
+                    "Opening Gmail..."
                 );
 
 
@@ -321,11 +324,6 @@ Sent via Kamohelo M.'s Portfolio Website`;
                 ------------------------------------------
                 OPEN GMAIL
                 ------------------------------------------
-
-                Gmail opens in a new browser tab with
-                the recipient, subject and message already
-                populated.
-                ------------------------------------------
                 */
 
                 const gmailWindow =
@@ -342,7 +340,7 @@ Sent via Kamohelo M.'s Portfolio Website`;
                 ------------------------------------------
 
                 If the browser blocks the new tab,
-                open Gmail in the current tab instead.
+                open Gmail in the current tab.
                 ------------------------------------------
                 */
 
@@ -361,7 +359,8 @@ Sent via Kamohelo M.'s Portfolio Website`;
                 RESET FORM
                 ------------------------------------------
 
-                The form is cleared after Gmail opens.
+                Give Gmail a moment to open before
+                clearing the website form.
                 ------------------------------------------
                 */
 
@@ -423,11 +422,6 @@ Sent via Kamohelo M.'s Portfolio Website`;
             "show"
         );
 
-
-        /*
-        Support existing CSS
-        ------------------------------------------
-        */
 
         formPopup.style.display =
             "block";
