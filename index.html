@@ -799,7 +799,7 @@
                 <div class="journey-quote reveal delay-1">
 
                     <span class="quote-mark">
-                        “
+                        "
                     </span>
 
                     <p>
@@ -836,13 +836,42 @@
                     exploring a new opportunity?
                 </p>
 
-                <a
-                    class="button button-primary"
-                    href="mailto:kmakhalemele174@gmail.com"
-                >
-                    Start a conversation
-                    <span>↗</span>
-                </a>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="senderName" 
+                            name="senderName" 
+                            placeholder="Your name" 
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <input 
+                            type="email" 
+                            id="senderEmail" 
+                            name="senderEmail" 
+                            placeholder="Your email" 
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            placeholder="Your message" 
+                            rows="5" 
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="button button-primary">
+                        Start a conversation
+                        <span>↗</span>
+                    </button>
+                </form>
 
             </div>
 
@@ -871,8 +900,74 @@
 
     </footer>
 
+    <!-- Success Popup Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Message Sent! ✦</h2>
+            <p>Thank you for reaching out. Your message has been sent to Kamohelo and they'll get back to you soon.</p>
+            <button class="button button-primary" onclick="closeModal()">Close</button>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
+    <script>
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const senderName = document.getElementById('senderName').value;
+            const senderEmail = document.getElementById('senderEmail').value;
+            const message = document.getElementById('message').value;
+            const recipientEmail = 'kmakhalemele174@gmail.com';
+            
+            // Use Formspree API to send email
+            fetch('https://formspree.io/f/xqkzejey', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: senderName,
+                    email: senderEmail,
+                    message: message,
+                    _replyto: senderEmail
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Show success modal
+                    document.getElementById('successModal').style.display = 'block';
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                } else {
+                    alert('Error sending message. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error sending message. Please try again.');
+            });
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('successModal');
+        const closeBtn = document.querySelector('.close');
+
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 
