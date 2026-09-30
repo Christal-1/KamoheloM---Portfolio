@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         revealObserver.observe(element);
     });
 
-    emailjs.init("YOUR_PUBLIC_KEY");
+    emailjs.init("rw9TwjCxJZIsPWS34");
 
     const contactForm = document.getElementById("contactForm");
     const formPopup = document.getElementById("formPopup");
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         contactForm.addEventListener("submit", function (e) {
             e.preventDefault();
 
-            emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
+            emailjs.sendForm("service_vxrxjiq", "template_75cfmpa", this)
                 .then((response) => {
                     console.log("SUCCESS!", response.status, response.text);
 
