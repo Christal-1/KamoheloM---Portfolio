@@ -17,7 +17,6 @@
 
     --dark: #1d2421;
 
-    /* LinkedIn brand colour */
     --linkedin: #0a66c2;
     --linkedin-dark: #004182;
     --linkedin-soft: rgba(10, 102, 194, 0.1);
@@ -81,6 +80,11 @@ textarea {
 
 button {
     cursor: pointer;
+}
+
+
+textarea {
+    resize: vertical;
 }
 
 
@@ -1403,7 +1407,7 @@ h1 {
 
     gap: 40px;
 
-    align-items: stretch;
+    align-items: start;
 }
 
 
@@ -1416,7 +1420,7 @@ h1 {
 }
 
 
-.contact-copy > p:last-child {
+.contact-copy > p {
     max-width: 560px;
 
     color: var(--muted);
@@ -1428,7 +1432,7 @@ h1 {
 
 
 /* =========================================================
-   CONTACT LINKEDIN
+   CONTACT SOCIAL
 ========================================================= */
 
 .contact-social {
@@ -1558,6 +1562,15 @@ h1 {
 
 .social-link.linkedin-profile:hover .linkedin-arrow {
     transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   CONTACT SIDE
+========================================================= */
+
+.contact-side {
+    min-width: 0;
 }
 
 
@@ -1700,24 +1713,52 @@ h1 {
 ========================================================= */
 
 .contact-form {
+    width: 100%;
+
+    max-width: 620px;
+
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
     gap: 12px;
 
-    margin-top: 24px;
+    margin-top: 22px;
 }
 
 
-/* NAME + EMAIL FIELDS */
-.contact-form input {
+.form-field {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.form-field label {
+    color: var(--muted);
+
+    font: 500 9px var(--mono);
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+.form-field-message {
+    grid-column: 1 / -1;
+}
+
+
+.contact-form input,
+.contact-form textarea {
     width: 100%;
 
-    height: 44px;
-    min-height: 44px;
-
-    padding: 10px 14px;
+    min-width: 0;
 
     border: 1px solid var(--line);
 
@@ -1729,10 +1770,6 @@ h1 {
 
     outline: none;
 
-    font-size: 13px;
-
-    line-height: 1.2;
-
     transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease,
@@ -1740,7 +1777,28 @@ h1 {
 }
 
 
-.contact-form input:focus {
+.contact-form input {
+    min-height: 46px;
+
+    padding: 11px 14px;
+
+    font-size: 13px;
+}
+
+
+.contact-form textarea {
+    min-height: 96px;
+
+    padding: 12px 14px;
+
+    line-height: 1.6;
+
+    font-size: 13px;
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus {
     border-color: var(--accent-dark);
 
     background: rgba(255, 255, 255, 0.18);
@@ -1750,16 +1808,15 @@ h1 {
 }
 
 
-.contact-form input::placeholder {
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
     color: var(--muted);
 }
 
 
-/* SUBMIT BUTTON */
 .contact-submit {
     grid-column: 1 / -1;
 
-    height: 46px;
     min-height: 46px;
 
     display: inline-flex;
@@ -1769,7 +1826,7 @@ h1 {
 
     gap: 12px;
 
-    padding: 10px 20px;
+    padding: 12px 18px;
 
     border: 0;
 
@@ -1944,30 +2001,6 @@ h1 {
     color: var(--ink);
 
     transform: translateY(-2px);
-}
-
-
-/* =========================================================
-   FOOTER LINKEDIN
-========================================================= */
-
-.footer-linkedin {
-    color: var(--linkedin) !important;
-}
-
-
-.footer-linkedin .linkedin-icon {
-    width: 18px;
-    height: 18px;
-
-    display: block;
-
-    fill: currentColor;
-}
-
-
-.footer-linkedin:hover {
-    color: var(--linkedin-dark) !important;
 }
 
 
@@ -2299,6 +2332,7 @@ h1 {
     .project-visual,
     .contact-copy,
     .contact-panel,
+    .contact-side,
     .content-card {
         min-width: 0;
         max-width: 100%;
@@ -2381,6 +2415,13 @@ h1 {
 
     .contact-form {
         grid-template-columns: 1fr;
+
+        max-width: 100%;
+    }
+
+
+    .form-field-message {
+        grid-column: auto;
     }
 
 
@@ -2837,23 +2878,32 @@ h1 {
     .contact-form {
         grid-template-columns: 1fr;
 
-        margin-top: 24px;
+        max-width: 100%;
 
-        gap: 12px;
+        margin-top: 20px;
     }
 
 
-    /* COMPACT MOBILE NAME + EMAIL FIELDS */
+    .form-field-message {
+        grid-column: auto;
+    }
+
+
     .contact-form input {
         width: 100%;
 
-        height: 44px;
-        min-height: 44px;
         min-width: 0;
 
-        padding: 10px 14px;
+        min-height: 46px;
 
-        font-size: 13px;
+        padding: 11px 14px;
+    }
+
+
+    .contact-form textarea {
+        min-height: 90px;
+
+        padding: 12px 14px;
     }
 
 
@@ -2862,7 +2912,6 @@ h1 {
 
         width: 100%;
 
-        height: 46px;
         min-height: 46px;
     }
 
@@ -3074,23 +3123,6 @@ h1 {
 
     .linkedin-text small {
         display: none;
-    }
-
-
-    /* EXTRA COMPACT FORM ON VERY SMALL SCREENS */
-    .contact-form input {
-        height: 42px;
-        min-height: 42px;
-
-        padding: 9px 12px;
-
-        font-size: 12px;
-    }
-
-
-    .contact-submit {
-        height: 44px;
-        min-height: 44px;
     }
 
 }
