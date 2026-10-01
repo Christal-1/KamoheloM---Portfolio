@@ -135,7 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
     The form collects:
     - Name
     - Email
-    - Optional Message
 
     The visitor can use any email provider:
     Gmail, Outlook, iCloud, Yahoo, company email, etc.
@@ -183,20 +182,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         '[name="email"]'
                     );
 
-                const messageInput =
-                    contactForm.querySelector(
-                        '[name="message"]'
-                    );
-
 
                 const name =
                     nameInput?.value.trim() || "";
 
                 const email =
                     emailInput?.value.trim() || "";
-
-                const message =
-                    messageInput?.value.trim() || "";
 
 
                 /*
@@ -297,9 +288,6 @@ My name is ${name}, and I came across your portfolio. I'd like to connect with y
 
 My email address is:
 ${email}
-
-My message:
-${enquiryMessage}
 
 I look forward to hearing from you.
 
