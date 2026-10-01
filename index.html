@@ -25,13 +25,9 @@
         content="Kamohelo Makhalemele"
     >
 
-    <!-- =====================================================
-         PWA / MOBILE APP SETTINGS
-    ====================================================== -->
-
     <meta
         name="theme-color"
-        content="#21412c"
+        content="#0b1511"
     >
 
     <meta
@@ -54,6 +50,8 @@
         content="Kamohelo M."
     >
 
+    <!-- PWA -->
+
     <link
         rel="manifest"
         href="manifest.json"
@@ -65,9 +63,7 @@
     >
 
 
-    <!-- =====================================================
-         OPEN GRAPH
-    ====================================================== -->
+    <!-- OPEN GRAPH -->
 
     <meta
         property="og:title"
@@ -95,9 +91,7 @@
     </title>
 
 
-    <!-- =====================================================
-         FAVICON
-    ====================================================== -->
+    <!-- FAVICON -->
 
     <link
         rel="icon"
@@ -106,9 +100,7 @@
     >
 
 
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
+    <!-- GOOGLE FONTS -->
 
     <link
         rel="preconnect"
@@ -127,9 +119,7 @@
     >
 
 
-    <!-- =====================================================
-         MAIN STYLESHEET
-    ====================================================== -->
+    <!-- MAIN CSS -->
 
     <link
         rel="stylesheet"
@@ -141,9 +131,7 @@
 
 <body>
 
-    <!-- =====================================================
-         CURSOR EFFECT
-    ====================================================== -->
+    <!-- CURSOR GLOW -->
 
     <div
         class="cursor-glow"
@@ -151,85 +139,101 @@
     ></div>
 
 
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
+    <!-- ACCESSIBILITY -->
+
+    <a
+        class="skip-link"
+        href="#main-content"
+    >
+        Skip to content
+    </a>
+
+
+    <!-- HEADER -->
 
     <header class="site-header">
 
-        <a
-            class="brand"
-            href="#home"
-            aria-label="Kamohelo Makhalemele home"
-        >
-
-            <span class="brand-mark">
-                K<span>.</span>
-            </span>
-
-            <span class="brand-name">
-                KAMOHELO MAKHALEMELE'S<span>/</span>PORTFOLIO
-            </span>
-
-        </a>
-
-
-        <!-- MOBILE MENU BUTTON -->
-
-        <button
-            class="menu-toggle"
-            aria-label="Toggle navigation menu"
-            aria-expanded="false"
-            aria-controls="main-navigation"
-            type="button"
-        >
-
-            <span></span>
-            <span></span>
-
-        </button>
-
-
-        <!-- NAVIGATION -->
-
-        <nav
-            class="nav"
-            id="main-navigation"
-            aria-label="Main navigation"
-        >
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#capabilities">
-                Capabilities
-            </a>
-
-            <a href="#work">
-                Work
-            </a>
-
-            <a href="#journey">
-                Journey
-            </a>
+        <div class="header-inner">
 
             <a
-                href="#contact"
-                class="nav-cta"
+                class="brand"
+                href="#home"
+                aria-label="Kamohelo Makhalemele home"
             >
-                Let's connect
-                <span>↗</span>
+
+                <span class="brand-mark">
+                    K<span>.</span>
+                </span>
+
+                <span class="brand-name">
+                    KAMOHELO MAKHALEMELE
+                    <span>/</span>
+                    PORTFOLIO
+                </span>
+
             </a>
 
-        </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                class="menu-toggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+                type="button"
+            >
+
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <!-- NAVIGATION -->
+
+            <nav
+                class="nav"
+                id="main-navigation"
+                aria-label="Main navigation"
+            >
+
+                <a href="#about">
+                    <span>01</span>
+                    About
+                </a>
+
+                <a href="#capabilities">
+                    <span>02</span>
+                    Capabilities
+                </a>
+
+                <a href="#work">
+                    <span>03</span>
+                    Work
+                </a>
+
+                <a href="#journey">
+                    <span>04</span>
+                    Journey
+                </a>
+
+                <a
+                    href="#contact"
+                    class="nav-cta"
+                >
+                    Let's connect
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </nav>
+
+        </div>
 
     </header>
 
 
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
+    <!-- MAIN -->
 
     <main id="main-content">
 
@@ -243,6 +247,17 @@
             class="hero section"
         >
 
+            <div class="hero-background" aria-hidden="true">
+
+                <div class="hero-grid-lines"></div>
+
+                <div class="hero-glow hero-glow-one"></div>
+
+                <div class="hero-glow hero-glow-two"></div>
+
+            </div>
+
+
             <div class="hero-grid">
 
 
@@ -254,7 +269,11 @@
 
                         <span class="status-dot"></span>
 
-                        ACCOUNT STRATEGY • PRODUCT & CATEGORY • SALES & MARKETING
+                        ACCOUNT STRATEGY
+                        <span>•</span>
+                        PRODUCT & CATEGORY
+                        <span>•</span>
+                        MARKETING
 
                     </p>
 
@@ -302,7 +321,7 @@
 
 
                         <a
-                            class="button button-ghost"
+                            class="button button-secondary"
                             href="#about"
                         >
 
@@ -316,36 +335,35 @@
 
                         </a>
 
+                    </div>
 
-                        <a
-                            class="button button-linkedin"
-                            href="https://www.linkedin.com/in/kamohelo-m-1b52651b5/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Visit Kamohelo Makhalemele on LinkedIn"
-                        >
 
-                            <svg
-                                class="linkedin-icon"
-                                viewBox="0 0 24 24"
-                                aria-hidden="true"
-                            >
+                    <div class="hero-meta">
 
-                                <path
-                                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM3.56 20.45h3.56V9H3.56v11.45ZM22.22 0H1.78C.8 0 0 .8 0 1.78v20.44C0 23.2.8 24 1.78 24h20.44C23.2 24 24 .8 24 1.78v20.44C24 23.2 23.2 24 22.22 24Z"
-                                />
-
-                            </svg>
+                        <div>
 
                             <span>
-                                LinkedIn
+                                BASED IN
                             </span>
 
-                            <span aria-hidden="true">
-                                ↗
+                            <strong>
+                                Johannesburg, SA
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                FOCUS
                             </span>
 
-                        </a>
+                            <strong>
+                                Commercial Strategy
+                            </strong>
+
+                        </div>
 
                     </div>
 
@@ -358,26 +376,43 @@
 
                     <div class="orbital-card">
 
+                        <div class="orbital-topline">
+
+                            <span>
+                                STRATEGIC PERSPECTIVE
+                            </span>
+
+                            <span>
+                                01 / 03
+                            </span>
+
+                        </div>
+
+
                         <div class="orbital-label">
                             THE INTERSECTION
                         </div>
 
 
-                        <div class="orbit orbit-one">
+                        <div
+                            class="orbit orbit-one"
+                            aria-hidden="true"
+                        >
 
                             <span
                                 class="orbit-dot dot-a"
-                                aria-hidden="true"
                             ></span>
 
                         </div>
 
 
-                        <div class="orbit orbit-two">
+                        <div
+                            class="orbit orbit-two"
+                            aria-hidden="true"
+                        >
 
                             <span
                                 class="orbit-dot dot-b"
-                                aria-hidden="true"
                             ></span>
 
                         </div>
@@ -414,6 +449,23 @@
                             GROWTH
                         </div>
 
+
+                        <div class="orbital-bottomline">
+
+                            <span>
+                                CUSTOMER
+                            </span>
+
+                            <span>
+                                STRATEGY
+                            </span>
+
+                            <span>
+                                COMMERCIAL
+                            </span>
+
+                        </div>
+
                     </div>
 
 
@@ -424,7 +476,8 @@
                         </span>
 
                         <span>
-                            Strategy connects customer understanding to commercial action.
+                            Strategy connects customer understanding
+                            to commercial action.
                         </span>
 
                     </div>
@@ -491,7 +544,10 @@
                         needs, products, categories and commercial strategy
                         come together to create meaningful business outcomes.
 
-                        <br><br>
+                    </p>
+
+
+                    <p>
 
                         My professional direction is expanding into brand
                         and digital marketing, where I am developing the
@@ -500,79 +556,128 @@
 
                     </p>
 
+
+                    <div class="about-highlight">
+
+                        <span class="highlight-line"></span>
+
+                        <p>
+                            Commercial thinking.
+                            Customer understanding.
+                            Strategic execution.
+                        </p>
+
+                    </div>
+
                 </div>
 
 
                 <div class="about-side reveal delay-1">
 
+
+                    <!-- PROFILE -->
+
                     <div class="profile-card">
 
-                        <img
-                            src="assets/images/profile/profile.jpg"
-                            alt="Portrait of Kamohelo Makhalemele"
-                            loading="lazy"
-                            decoding="async"
-                        >
+                        <div class="profile-image-wrap">
+
+                            <img
+                                src="assets/images/profile/profile.jpg"
+                                alt="Portrait of Kamohelo Makhalemele"
+                                loading="lazy"
+                                decoding="async"
+                            >
+
+                        </div>
 
 
-                        <p>
+                        <div class="profile-card-content">
 
-                            Account Strategy Specialist | Product &
-                            Category Specialist | Aspiring Brand &
-                            Digital Marketing Specialist
+                            <span class="profile-label">
+                                PROFESSIONAL PROFILE
+                            </span>
 
-                        </p>
+                            <p>
+
+                                Account Strategy Specialist |
+                                Product & Category Specialist |
+                                Aspiring Brand & Digital Marketing Specialist
+
+                            </p>
+
+                        </div>
 
                     </div>
 
 
+                    <!-- STAT 01 -->
+
                     <div class="mini-stat">
 
-                        <span>
+                        <span class="mini-stat-number">
                             01
                         </span>
 
-                        <strong>
-                            Accounts
-                        </strong>
+                        <div>
 
-                        <small>
-                            Build relationships, understand client needs and identify opportunities.
-                        </small>
+                            <strong>
+                                Accounts
+                            </strong>
+
+                            <small>
+                                Build relationships, understand client
+                                needs and identify opportunities.
+                            </small>
+
+                        </div>
 
                     </div>
 
 
+                    <!-- STAT 02 -->
+
                     <div class="mini-stat">
 
-                        <span>
+                        <span class="mini-stat-number">
                             02
                         </span>
 
-                        <strong>
-                            Products
-                        </strong>
+                        <div>
 
-                        <small>
-                            Understand products, categories and the opportunities behind them.
-                        </small>
+                            <strong>
+                                Products
+                            </strong>
+
+                            <small>
+                                Understand products, categories and the
+                                opportunities behind them.
+                            </small>
+
+                        </div>
 
                     </div>
 
 
+                    <!-- STAT 03 -->
+
                     <div class="mini-stat">
 
-                        <span>
+                        <span class="mini-stat-number">
                             03
                         </span>
 
-                        <strong>
-                            Growth
-                        </strong>
+                        <div>
 
-                        <small>
-                            Connect commercial thinking with customer and market opportunities.
-                        </small>
+                            <strong>
+                                Growth
+                            </strong>
+
+                            <small>
+                                Connect commercial thinking with customer
+                                and market opportunities.
+                            </small>
+
+                        </div>
 
                     </div>
 
@@ -630,18 +735,26 @@
 
             <div class="capability-grid">
 
-                <article class="capability-card reveal">
 
-                    <div class="card-number">
-                        01
-                    </div>
+                <!-- CAPABILITY 01 -->
 
+                <article
+                    class="capability-card reveal"
+                >
 
-                    <div
-                        class="card-icon"
-                        aria-hidden="true"
-                    >
-                        ◎
+                    <div class="card-top">
+
+                        <span class="card-number">
+                            01
+                        </span>
+
+                        <span
+                            class="card-icon"
+                            aria-hidden="true"
+                        >
+                            ◎
+                        </span>
+
                     </div>
 
 
@@ -666,37 +779,36 @@
 
                     <div class="card-tags">
 
-                        <span>
-                            ACCOUNTS
-                        </span>
+                        <span>ACCOUNTS</span>
 
-                        <span>
-                            CLIENTS
-                        </span>
+                        <span>CLIENTS</span>
 
-                        <span>
-                            RELATIONSHIPS
-                        </span>
+                        <span>RELATIONSHIPS</span>
 
                     </div>
 
                 </article>
 
 
+                <!-- CAPABILITY 02 -->
+
                 <article
                     class="capability-card featured reveal delay-1"
                 >
 
-                    <div class="card-number">
-                        02
-                    </div>
+                    <div class="card-top">
 
+                        <span class="card-number">
+                            02
+                        </span>
 
-                    <div
-                        class="card-icon"
-                        aria-hidden="true"
-                    >
-                        ✦
+                        <span
+                            class="card-icon"
+                            aria-hidden="true"
+                        >
+                            ✦
+                        </span>
+
                     </div>
 
 
@@ -722,35 +834,36 @@
 
                     <div class="card-tags">
 
-                        <span>
-                            PRODUCT
-                        </span>
+                        <span>PRODUCT</span>
 
-                        <span>
-                            CATEGORY
-                        </span>
+                        <span>CATEGORY</span>
 
-                        <span>
-                            COMMERCIAL
-                        </span>
+                        <span>COMMERCIAL</span>
 
                     </div>
 
                 </article>
 
 
-                <article class="capability-card reveal delay-2">
+                <!-- CAPABILITY 03 -->
 
-                    <div class="card-number">
-                        03
-                    </div>
+                <article
+                    class="capability-card reveal delay-2"
+                >
 
+                    <div class="card-top">
 
-                    <div
-                        class="card-icon"
-                        aria-hidden="true"
-                    >
-                        ↗
+                        <span class="card-number">
+                            03
+                        </span>
+
+                        <span
+                            class="card-icon"
+                            aria-hidden="true"
+                        >
+                            ↗
+                        </span>
+
                     </div>
 
 
@@ -776,17 +889,11 @@
 
                     <div class="card-tags">
 
-                        <span>
-                            SALES
-                        </span>
+                        <span>SALES</span>
 
-                        <span>
-                            BRAND
-                        </span>
+                        <span>BRAND</span>
 
-                        <span>
-                            DIGITAL
-                        </span>
+                        <span>DIGITAL</span>
 
                     </div>
 
@@ -866,7 +973,7 @@
 
                     <div class="project-content">
 
-                        <div>
+                        <div class="project-copy">
 
                             <h3>
 
@@ -938,17 +1045,11 @@
 
                     <div class="project-tags">
 
-                        <span>
-                            RESEARCH
-                        </span>
+                        <span>RESEARCH</span>
 
-                        <span>
-                            POSITIONING
-                        </span>
+                        <span>POSITIONING</span>
 
-                        <span>
-                            BRAND STRATEGY
-                        </span>
+                        <span>BRAND STRATEGY</span>
 
                     </div>
 
@@ -977,7 +1078,7 @@
 
                     <div class="project-content">
 
-                        <div>
+                        <div class="project-copy">
 
                             <h3>
 
@@ -1047,17 +1148,11 @@
 
                     <div class="project-tags">
 
-                        <span>
-                            CAMPAIGN
-                        </span>
+                        <span>CAMPAIGN</span>
 
-                        <span>
-                            CONTENT
-                        </span>
+                        <span>CONTENT</span>
 
-                        <span>
-                            CONVERSION
-                        </span>
+                        <span>CONVERSION</span>
 
                     </div>
 
@@ -1086,7 +1181,7 @@
 
                     <div class="project-content">
 
-                        <div>
+                        <div class="project-copy">
 
                             <h3>
 
@@ -1136,12 +1231,17 @@
 
                             <div class="chart-bars">
 
-                                <i style="height: 34%;"></i>
-                                <i style="height: 53%;"></i>
-                                <i style="height: 42%;"></i>
-                                <i style="height: 75%;"></i>
-                                <i style="height: 92%;"></i>
-                                <i style="height: 68%;"></i>
+                                <i style="height:34%"></i>
+
+                                <i style="height:53%"></i>
+
+                                <i style="height:42%"></i>
+
+                                <i style="height:75%"></i>
+
+                                <i style="height:92%"></i>
+
+                                <i style="height:68%"></i>
 
                             </div>
 
@@ -1163,17 +1263,11 @@
 
                     <div class="project-tags">
 
-                        <span>
-                            ANALYTICS
-                        </span>
+                        <span>ANALYTICS</span>
 
-                        <span>
-                            KPIs
-                        </span>
+                        <span>KPIs</span>
 
-                        <span>
-                            INSIGHT
-                        </span>
+                        <span>INSIGHT</span>
 
                     </div>
 
@@ -1235,7 +1329,10 @@
                         thinking, with a strong interest in the
                         commercial side of customer relationships.
 
-                        <br><br>
+                    </p>
+
+
+                    <p>
 
                         As I continue developing toward brand and
                         digital marketing, I am interested in bringing
@@ -1250,7 +1347,11 @@
 
                 <div class="about-side reveal delay-1">
 
-                    <div class="profile-card">
+                    <div class="profile-card text-profile-card">
+
+                        <span class="profile-label">
+                            DIRECTION
+                        </span>
 
                         <p>
 
@@ -1266,51 +1367,66 @@
 
                     <div class="mini-stat">
 
-                        <span>
+                        <span class="mini-stat-number">
                             01
                         </span>
 
-                        <strong>
-                            Account Strategy
-                        </strong>
+                        <div>
 
-                        <small>
-                            Understand clients, relationships and commercial opportunities.
-                        </small>
+                            <strong>
+                                Account Strategy
+                            </strong>
+
+                            <small>
+                                Understand clients, relationships and
+                                commercial opportunities.
+                            </small>
+
+                        </div>
 
                     </div>
 
 
                     <div class="mini-stat">
 
-                        <span>
+                        <span class="mini-stat-number">
                             02
                         </span>
 
-                        <strong>
-                            Product & Category
-                        </strong>
+                        <div>
 
-                        <small>
-                            Connect product and category thinking to customer and market needs.
-                        </small>
+                            <strong>
+                                Product & Category
+                            </strong>
+
+                            <small>
+                                Connect product and category thinking
+                                to customer and market needs.
+                            </small>
+
+                        </div>
 
                     </div>
 
 
                     <div class="mini-stat">
 
-                        <span>
+                        <span class="mini-stat-number">
                             03
                         </span>
 
-                        <strong>
-                            Brand & Digital
-                        </strong>
+                        <div>
 
-                        <small>
-                            Developing marketing capabilities across brand, digital and customer engagement.
-                        </small>
+                            <strong>
+                                Brand & Digital
+                            </strong>
+
+                            <small>
+                                Developing marketing capabilities across
+                                brand, digital and customer engagement.
+                            </small>
+
+                        </div>
 
                     </div>
 
@@ -1362,9 +1478,6 @@
                         sales, marketing or a potential opportunity,
                         I'd love to hear from you.
 
-                        Feel free to reach out using the form below
-                        or connect with me on LinkedIn.
-
                     </p>
 
 
@@ -1392,7 +1505,7 @@
                                 >
 
                                     <path
-                                        d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM3.56 20.45h3.56V9H3.56v11.45ZM22.22 0H1.78C.8 0 0 .8 0 1.78v20.44C0 23.2.8 24 1.78 24h20.44C23.2 24 24 .8 24 1.78v20.44C24 23.2 23.2 23.2 22.22 24Z"
+                                        d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM3.56 20.45h3.56V9H3.56v11.45ZM22.22 0H1.78C.8 0 0 .8 0 1.78v20.44C0 23.2.8 24 1.78 24h20.44C23.2 24 24 .8 24 22.22V1.78C24 .8 23.2 0 22.22 0Z"
                                     />
 
                                 </svg>
@@ -1441,6 +1554,8 @@
 
                             <span class="panel-orbit"></span>
 
+                            <span class="panel-orbit-small"></span>
+
                         </div>
 
 
@@ -1465,7 +1580,7 @@
 
                     <form
                         id="contactForm"
-                        class="contact-form reveal"
+                        class="contact-form"
                         action="#"
                         method="post"
                         novalidate
@@ -1513,7 +1628,7 @@
                         >
 
                             <span>
-                                Send Message
+                                Prepare message
                             </span>
 
                             <span aria-hidden="true">
@@ -1521,6 +1636,14 @@
                             </span>
 
                         </button>
+
+
+                        <p class="form-note">
+
+                            Your message will open in Gmail for you
+                            to review before sending.
+
+                        </p>
 
                     </form>
 
@@ -1542,39 +1665,52 @@
     </main>
 
 
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+    <!-- FOOTER -->
 
     <footer class="site-footer">
 
-        <span>
+        <div class="footer-inner">
 
-            KAMOHELO MAKHALEMELE
+            <div class="footer-brand">
 
-            <span class="footer-symbol">
-                /
-            </span>
+                <span class="footer-mark">
+                    K.
+                </span>
 
-            PORTFOLIO
+                <span>
+                    KAMOHELO MAKHALEMELE
+                </span>
 
-        </span>
+            </div>
 
 
-        <div class="footer-links">
+            <p>
+                Account Strategy • Product • Marketing
+            </p>
 
-            <a href="#home">
-                Back to top ↑
-            </a>
+
+            <div class="footer-links">
+
+                <a href="#home">
+                    Back to top ↑
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/kamohelo-m-1b52651b5/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn ↗
+                </a>
+
+            </div>
 
         </div>
 
     </footer>
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
+    <!-- JAVASCRIPT -->
 
     <script src="js/main.js"></script>
 
