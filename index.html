@@ -26,7 +26,7 @@
     >
 
     <!-- =====================================================
-         PWA / APP SETTINGS
+         PWA / MOBILE APP SETTINGS
     ====================================================== -->
 
     <meta
@@ -54,14 +54,10 @@
         content="Kamohelo M."
     >
 
-    <!-- PWA MANIFEST -->
-
     <link
         rel="manifest"
         href="manifest.json"
     >
-
-    <!-- iPhone / iPad HOME SCREEN ICON -->
 
     <link
         rel="apple-touch-icon"
@@ -145,7 +141,6 @@
 
 <body>
 
-
     <!-- =====================================================
          CURSOR EFFECT
     ====================================================== -->
@@ -179,7 +174,7 @@
         </a>
 
 
-        <!-- MOBILE MENU -->
+        <!-- MOBILE MENU BUTTON -->
 
         <button
             class="menu-toggle"
@@ -233,7 +228,7 @@
 
 
     <!-- =====================================================
-         MAIN CONTENT
+         MAIN
     ====================================================== -->
 
     <main id="main-content">
@@ -288,8 +283,6 @@
                     </p>
 
 
-                    <!-- HERO ACTIONS -->
-
                     <div class="hero-actions">
 
                         <a
@@ -297,9 +290,13 @@
                             href="#work"
                         >
 
-                            Explore the work
+                            <span>
+                                Explore the work
+                            </span>
 
-                            <span>↗</span>
+                            <span aria-hidden="true">
+                                ↗
+                            </span>
 
                         </a>
 
@@ -309,14 +306,16 @@
                             href="#about"
                         >
 
-                            Get to know me
+                            <span>
+                                Get to know me
+                            </span>
 
-                            <span>↓</span>
+                            <span aria-hidden="true">
+                                ↓
+                            </span>
 
                         </a>
 
-
-                        <!-- LINKEDIN -->
 
                         <a
                             class="button button-linkedin"
@@ -342,7 +341,7 @@
                                 LinkedIn
                             </span>
 
-                            <span>
+                            <span aria-hidden="true">
                                 ↗
                             </span>
 
@@ -366,21 +365,30 @@
 
                         <div class="orbit orbit-one">
 
-                            <span class="orbit-dot dot-a"></span>
+                            <span
+                                class="orbit-dot dot-a"
+                                aria-hidden="true"
+                            ></span>
 
                         </div>
 
 
                         <div class="orbit orbit-two">
 
-                            <span class="orbit-dot dot-b"></span>
+                            <span
+                                class="orbit-dot dot-b"
+                                aria-hidden="true"
+                            ></span>
 
                         </div>
 
 
                         <div class="orbit-core">
 
-                            <span class="core-symbol">
+                            <span
+                                class="core-symbol"
+                                aria-hidden="true"
+                            >
                                 ✦
                             </span>
 
@@ -466,7 +474,6 @@
 
             <div class="about-grid">
 
-
                 <div class="about-statement reveal">
 
                     <p class="large-copy">
@@ -504,6 +511,7 @@
                             src="assets/images/profile/profile.jpg"
                             alt="Portrait of Kamohelo Makhalemele"
                             loading="lazy"
+                            decoding="async"
                         >
 
 
@@ -621,7 +629,6 @@
 
 
             <div class="capability-grid">
-
 
                 <article class="capability-card reveal">
 
@@ -893,7 +900,7 @@
 
                                 View full project
 
-                                <span>
+                                <span aria-hidden="true">
                                     ↗
                                 </span>
 
@@ -1003,7 +1010,7 @@
 
                                 View full project
 
-                                <span>
+                                <span aria-hidden="true">
                                     ↗
                                 </span>
 
@@ -1113,7 +1120,7 @@
 
                                 View full project
 
-                                <span>
+                                <span aria-hidden="true">
                                     ↗
                                 </span>
 
@@ -1143,7 +1150,7 @@
 
                                 PERFORMANCE INSIGHT
 
-                                <span>
+                                <span aria-hidden="true">
                                     ↗
                                 </span>
 
@@ -1361,8 +1368,6 @@
                     </p>
 
 
-                    <!-- LINKEDIN -->
-
                     <div class="contact-social">
 
                         <span class="contact-social-label">
@@ -1387,7 +1392,7 @@
                                 >
 
                                     <path
-                                        d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM3.56 20.45h3.56V9H3.56v11.45ZM22.22 0H1.78C.8 0 0 .8 0 1.78v20.44C0 23.2.8 24 1.78 24h20.44C23.2 24 24 .8 24 1.78v20.44C24 23.2 23.2 24 22.22 24Z"
+                                        d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM3.56 20.45h3.56V9H3.56v11.45ZM22.22 0H1.78C.8 0 0 .8 0 1.78v20.44C0 23.2.8 24 1.78 24h20.44C23.2 24 24 .8 24 1.78v20.44C24 23.2 23.2 23.2 22.22 24Z"
                                     />
 
                                 </svg>
@@ -1408,7 +1413,10 @@
                             </span>
 
 
-                            <span class="linkedin-arrow">
+                            <span
+                                class="linkedin-arrow"
+                                aria-hidden="true"
+                            >
                                 ↗
                             </span>
 
@@ -1423,8 +1431,6 @@
 
                 <div class="contact-side reveal delay-1">
 
-
-                    <!-- CONTACT PANEL -->
 
                     <div class="contact-panel">
 
@@ -1501,14 +1507,33 @@
                         </div>
 
 
+                        <div class="form-field form-field-message">
+
+                            <label for="contactMessage">
+                                Message
+                            </label>
+
+                            <textarea
+                                id="contactMessage"
+                                name="message"
+                                placeholder="Tell me a little about what you'd like to discuss..."
+                                rows="5"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
                         <button
                             class="contact-submit"
                             type="submit"
                         >
 
-                            Send Message
-
                             <span>
+                                Send Message
+                            </span>
+
+                            <span aria-hidden="true">
                                 ↗
                             </span>
 
@@ -1565,7 +1590,7 @@
 
 
     <!-- =====================================================
-         MAIN JAVASCRIPT
+         JAVASCRIPT
     ====================================================== -->
 
     <script src="js/main.js"></script>
