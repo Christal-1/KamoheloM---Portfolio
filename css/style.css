@@ -28,7 +28,7 @@
     --radius: 18px;
     --max: 1240px;
 
-    --mobile-gutter: 20px;
+    --mobile-gutter: 18px;
 }
 
 
@@ -42,39 +42,30 @@
     padding: 0;
 }
 
-
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
 }
 
-
 body {
     min-height: 100vh;
-
     background: var(--bg);
     color: var(--ink);
-
     font-family: var(--sans);
-
     overflow-x: hidden;
-
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
-
 
 img {
     display: block;
     max-width: 100%;
 }
 
-
 a {
     color: inherit;
     text-decoration: none;
 }
-
 
 button,
 input,
@@ -82,16 +73,13 @@ textarea {
     font: inherit;
 }
 
-
 button {
     cursor: pointer;
 }
 
-
 textarea {
     resize: vertical;
 }
-
 
 ::selection {
     background: var(--accent);
@@ -107,7 +95,6 @@ textarea {
     outline: 2px solid var(--accent-dark);
     outline-offset: 4px;
 }
-
 
 button:focus-visible {
     outline: 2px solid var(--accent-dark);
@@ -125,12 +112,10 @@ button:focus-visible {
     height: 280px;
 
     position: fixed;
-
     left: 0;
     top: 0;
 
     pointer-events: none;
-
     z-index: 50;
 
     border-radius: 50%;
@@ -143,12 +128,10 @@ button:focus-visible {
         );
 
     transform: translate(-50%, -50%);
-
     opacity: 0;
 
     transition: opacity 0.3s ease;
 }
-
 
 body:hover .cursor-glow {
     opacity: 1;
@@ -166,7 +149,6 @@ body:hover .cursor-glow {
     );
 
     margin: 0 auto;
-
     padding: 28px 0;
 
     display: flex;
@@ -183,16 +165,12 @@ body:hover .cursor-glow {
     z-index: 100;
 }
 
-
 .brand {
     display: flex;
     align-items: center;
-
     gap: 13px;
-
     min-width: 0;
 }
-
 
 .brand-mark {
     width: 36px;
@@ -211,33 +189,25 @@ body:hover .cursor-glow {
     font-style: italic;
 }
 
-
 .brand-mark span,
 .brand-name span {
     color: var(--accent-dark);
 }
 
-
 .brand-name {
     font: 500 10px var(--mono);
-
     letter-spacing: 0.08em;
 }
-
 
 .nav {
     display: flex;
     align-items: center;
-
     gap: 30px;
 
     font: 500 10px var(--mono);
-
     letter-spacing: 0.04em;
-
     text-transform: uppercase;
 }
-
 
 .nav a {
     opacity: 0.65;
@@ -247,22 +217,16 @@ body:hover .cursor-glow {
         transform 0.2s ease;
 }
 
-
 .nav a:hover {
     opacity: 1;
-
     transform: translateY(-2px);
 }
 
-
 .nav-cta {
     padding-bottom: 5px;
-
     border-bottom: 1px solid var(--ink);
-
     opacity: 1 !important;
 }
-
 
 .nav-cta span {
     color: var(--accent-dark);
@@ -287,7 +251,6 @@ body:hover .cursor-glow {
     background: rgba(255, 255, 255, 0.35);
 }
 
-
 .menu-toggle span {
     display: block;
 
@@ -305,11 +268,9 @@ body:hover .cursor-glow {
         opacity 0.2s ease;
 }
 
-
 .menu-toggle[aria-expanded="true"] span:first-child {
     transform: translateY(7px) rotate(45deg);
 }
-
 
 .menu-toggle[aria-expanded="true"] span:last-child {
     transform: translateY(-7px) rotate(-45deg);
@@ -327,10 +288,8 @@ body:hover .cursor-glow {
     );
 
     margin: 0 auto;
-
     padding: 140px 0;
 }
-
 
 .about-section,
 .capabilities-section,
@@ -349,42 +308,33 @@ h1,
 h2,
 h3 {
     font-weight: 700;
-
     letter-spacing: -0.06em;
 }
-
 
 h1 em,
 h2 span,
 h3 em {
     font-family: var(--serif);
-
     font-weight: 400;
 }
-
 
 .eyebrow {
     color: var(--muted);
 
     font: 500 10px var(--mono);
-
     letter-spacing: 0.1em;
 }
-
 
 .section-heading {
     margin-bottom: 46px;
 }
 
-
 .section-heading h2 {
     margin-top: 18px;
 
     font-size: clamp(32px, 4vw, 62px);
-
     line-height: 0.98;
 }
-
 
 .split-heading {
     display: flex;
@@ -395,14 +345,12 @@ h3 em {
     gap: 30px;
 }
 
-
 .heading-note {
     max-width: 430px;
 
     color: var(--muted);
 
     font-size: 14px;
-
     line-height: 1.8;
 }
 
@@ -423,7 +371,6 @@ h3 em {
     position: relative;
 }
 
-
 .hero-grid {
     display: grid;
 
@@ -434,13 +381,10 @@ h3 em {
     align-items: center;
 }
 
-
 .hero-copy {
     position: relative;
-
     min-width: 0;
 }
-
 
 .status-dot {
     display: inline-block;
@@ -458,15 +402,12 @@ h3 em {
         0 0 0 5px rgba(109, 143, 0, 0.08);
 }
 
-
 h1 {
     margin: 26px 0 34px;
 
     font-size: clamp(52px, 7vw, 105px);
-
     line-height: 0.92;
 }
-
 
 .hero-intro {
     max-width: 520px;
@@ -474,23 +415,19 @@ h1 {
     color: var(--muted);
 
     font-size: 15px;
-
     line-height: 1.75;
 }
-
 
 .hero-actions {
     display: flex;
 
     align-items: center;
-
     flex-wrap: wrap;
 
     gap: 12px;
 
     margin-top: 36px;
 }
-
 
 .button {
     min-height: 48px;
@@ -505,9 +442,7 @@ h1 {
     padding: 14px 18px;
 
     font: 500 10px var(--mono);
-
     letter-spacing: 0.06em;
-
     text-transform: uppercase;
 
     transition:
@@ -518,30 +453,23 @@ h1 {
         box-shadow 0.25s ease;
 }
 
-
 .button:hover {
     transform: translateY(-3px);
 }
 
-
 .button-primary {
     background: var(--dark);
-
     color: var(--bg);
 }
 
-
 .button-primary:hover {
     background: var(--accent-dark);
-
     color: #fff;
 }
-
 
 .button-ghost {
     border: 1px solid var(--line);
 }
-
 
 .button-ghost:hover {
     border-color: var(--ink);
@@ -549,23 +477,20 @@ h1 {
 
 
 /* =========================================================
-   LINKEDIN BRAND BUTTON
+   LINKEDIN BUTTON
 ========================================================= */
 
 .button-linkedin {
     gap: 10px;
 
     background: var(--linkedin);
-
     color: #ffffff;
 
     border: 1px solid var(--linkedin);
 }
 
-
 .button-linkedin:hover {
     background: var(--linkedin-dark);
-
     color: #ffffff;
 
     border-color: var(--linkedin-dark);
@@ -574,7 +499,6 @@ h1 {
         0 8px 20px rgba(10, 102, 194, 0.18);
 }
 
-
 .button-linkedin .linkedin-icon {
     width: 18px;
     height: 18px;
@@ -582,10 +506,8 @@ h1 {
     display: block;
 
     fill: currentColor;
-
     flex-shrink: 0;
 }
-
 
 .button-linkedin > span:last-child {
     color: #ffffff;
@@ -594,11 +516,9 @@ h1 {
         transform 0.25s ease;
 }
 
-
 .button-linkedin:hover > span:last-child {
     transform: translate(3px, -3px);
 }
-
 
 .linkedin-icon {
     width: 20px;
@@ -628,12 +548,9 @@ h1 {
     color: var(--muted);
 
     font: 9px var(--mono);
-
     letter-spacing: 0.08em;
-
     text-transform: uppercase;
 }
-
 
 .scroll-cue span {
     width: 34px;
@@ -657,7 +574,6 @@ h1 {
     min-width: 0;
 }
 
-
 .orbital-card {
     height: 430px;
 
@@ -669,7 +585,6 @@ h1 {
 
     background: var(--dark);
 }
-
 
 .orbital-card::before {
     content: "";
@@ -699,7 +614,6 @@ h1 {
         );
 }
 
-
 .orbital-label {
     position: absolute;
 
@@ -709,10 +623,8 @@ h1 {
     color: rgba(255, 255, 255, 0.5);
 
     font: 9px var(--mono);
-
     letter-spacing: 0.1em;
 }
-
 
 .orbit {
     position: absolute;
@@ -729,12 +641,10 @@ h1 {
         rotate(-25deg);
 }
 
-
 .orbit-one {
     width: 310px;
     height: 310px;
 }
-
 
 .orbit-two {
     width: 195px;
@@ -744,7 +654,6 @@ h1 {
         translate(-50%, -50%)
         rotate(65deg);
 }
-
 
 .orbit-dot {
     position: absolute;
@@ -760,18 +669,15 @@ h1 {
         0 0 25px var(--accent);
 }
 
-
 .dot-a {
     left: 15%;
     top: 8%;
 }
 
-
 .dot-b {
     right: 8%;
     top: 58%;
 }
-
 
 .orbit-core {
     width: 116px;
@@ -792,24 +698,18 @@ h1 {
     border-radius: 50%;
 
     background: var(--accent);
-
     color: var(--ink);
 }
 
-
 .core-symbol {
     font-size: 25px;
-
     line-height: 1;
 }
 
-
 .orbit-core small {
     font: 8px var(--mono);
-
     letter-spacing: 0.08em;
 }
-
 
 .orbit-tag {
     position: absolute;
@@ -817,28 +717,23 @@ h1 {
     color: rgba(255, 255, 255, 0.7);
 
     font: 9px var(--mono);
-
     letter-spacing: 0.08em;
 }
-
 
 .tag-customer {
     top: 31%;
     left: 8%;
 }
 
-
 .tag-brand {
     top: 24%;
     right: 9%;
 }
 
-
 .tag-growth {
     bottom: 18%;
     left: 18%;
 }
-
 
 .visual-caption {
     display: flex;
@@ -852,7 +747,6 @@ h1 {
     color: var(--muted);
 
     font: 9px var(--mono);
-
     letter-spacing: 0.08em;
 }
 
@@ -871,26 +765,21 @@ h1 {
     align-items: start;
 }
 
-
 .large-copy {
     margin-bottom: 26px;
 
     font-size: clamp(30px, 3vw, 48px);
 
     line-height: 1.02;
-
     letter-spacing: -0.06em;
 }
-
 
 .about-statement > p:not(.large-copy) {
     max-width: 560px;
 
     color: var(--muted);
-
     line-height: 1.9;
 }
-
 
 .about-side {
     display: grid;
@@ -900,17 +789,14 @@ h1 {
     min-width: 0;
 }
 
-
 .profile-card {
     padding: 18px;
 
     background: rgba(255, 255, 255, 0.38);
 
     border: 1px solid var(--line);
-
     border-radius: 24px;
 }
-
 
 .profile-card img {
     width: 100%;
@@ -919,19 +805,15 @@ h1 {
     margin-bottom: 18px;
 
     object-fit: cover;
-
     object-position: center center;
 
     border-radius: 18px;
 }
 
-
 .profile-card p {
     color: var(--muted);
-
     line-height: 1.8;
 }
-
 
 .mini-stat {
     display: grid;
@@ -947,28 +829,22 @@ h1 {
     background: rgba(255, 255, 255, 0.28);
 
     border: 1px solid var(--line);
-
     border-radius: 18px;
 }
 
-
 .mini-stat span {
     color: var(--accent-dark);
-
     font: 500 12px var(--mono);
 }
-
 
 .mini-stat strong {
     font-size: 18px;
 }
 
-
 .mini-stat small {
     grid-column: 2;
 
     color: var(--muted);
-
     line-height: 1.7;
 }
 
@@ -986,18 +862,15 @@ h1 {
     gap: 26px;
 }
 
-
 .capability-card {
     padding: 30px 24px 22px;
 
     position: relative;
-
     overflow: hidden;
 
     background: rgba(255, 255, 255, 0.26);
 
     border: 1px solid var(--line);
-
     border-radius: 26px;
 
     transition:
@@ -1005,20 +878,16 @@ h1 {
         border-color 0.25s ease;
 }
 
-
 .capability-card:hover {
     transform: translateY(-5px);
 
     border-color: rgba(29, 36, 33, 0.3);
 }
 
-
 .capability-card.featured {
     background: var(--dark);
-
     color: #fff;
 }
-
 
 .card-number {
     margin-bottom: 22px;
@@ -1026,45 +895,35 @@ h1 {
     color: var(--muted);
 
     font: 500 10px var(--mono);
-
     letter-spacing: 0.08em;
 }
-
 
 .capability-card.featured .card-number {
     color: rgba(255, 255, 255, 0.7);
 }
 
-
 .card-icon {
     margin-bottom: 18px;
-
     font-size: 28px;
 }
-
 
 .capability-card h3 {
     margin-bottom: 16px;
 
     font-size: clamp(26px, 2vw, 38px);
-
     line-height: 1.02;
 }
-
 
 .capability-card p {
     margin-bottom: 24px;
 
     color: var(--muted);
-
     line-height: 1.8;
 }
-
 
 .capability-card.featured p {
     color: rgba(255, 255, 255, 0.8);
 }
-
 
 .card-tags,
 .project-tags {
@@ -1075,22 +934,18 @@ h1 {
     gap: 8px;
 }
 
-
 .card-tags span,
 .project-tags span {
     padding: 8px 10px;
 
     border: 1px solid var(--line);
-
     border-radius: 999px;
 
     font: 500 8px var(--mono);
 
     letter-spacing: 0.08em;
-
     text-transform: uppercase;
 }
-
 
 .capability-card.featured .card-tags span {
     color: rgba(255, 255, 255, 0.8);
@@ -1107,13 +962,10 @@ h1 {
     padding-bottom: 110px;
 }
 
-
 .project-list {
     display: grid;
-
     gap: 28px;
 }
-
 
 .project-card {
     padding: 30px 28px;
@@ -1121,7 +973,6 @@ h1 {
     background: rgba(255, 255, 255, 0.22);
 
     border: 1px solid var(--line);
-
     border-radius: 28px;
 
     transition:
@@ -1129,18 +980,15 @@ h1 {
         border-color 0.25s ease;
 }
 
-
 .project-card:hover {
     transform: translateY(-4px);
 
     border-color: rgba(29, 36, 33, 0.25);
 }
 
-
 .project-card.project-featured {
     background: rgba(255, 255, 255, 0.28);
 }
-
 
 .project-meta {
     display: flex;
@@ -1156,10 +1004,8 @@ h1 {
     font: 500 9px var(--mono);
 
     letter-spacing: 0.1em;
-
     text-transform: uppercase;
 }
-
 
 .project-content {
     display: grid;
@@ -1171,7 +1017,6 @@ h1 {
     align-items: center;
 }
 
-
 .project-card h3 {
     margin-bottom: 18px;
 
@@ -1180,17 +1025,14 @@ h1 {
     line-height: 1;
 }
 
-
 .project-card p {
     max-width: 520px;
 
     margin-bottom: 18px;
 
     color: var(--muted);
-
     line-height: 1.8;
 }
-
 
 .text-link {
     display: inline-flex;
@@ -1206,7 +1048,6 @@ h1 {
     font: 500 10px var(--mono);
 
     letter-spacing: 0.08em;
-
     text-transform: uppercase;
 
     transition:
@@ -1214,31 +1055,25 @@ h1 {
         transform 0.2s ease;
 }
 
-
 .text-link:hover {
     opacity: 0.7;
-
     transform: translateX(3px);
 }
-
 
 .project-visual {
     min-height: 220px;
 
     position: relative;
-
     overflow: hidden;
 
     display: grid;
     place-items: center;
 
     border: 1px solid rgba(29, 36, 33, 0.08);
-
     border-radius: 22px;
 
     background: rgba(29, 36, 33, 0.04);
 }
-
 
 .brand-visual {
     background:
@@ -1249,10 +1084,8 @@ h1 {
         );
 }
 
-
 .visual-grid {
     position: absolute;
-
     inset: 0;
 
     background-image:
@@ -1269,10 +1102,8 @@ h1 {
     background-size: 20px 20px;
 }
 
-
 .visual-word {
     position: relative;
-
     z-index: 1;
 
     font: 500 28px var(--mono);
@@ -1282,11 +1113,9 @@ h1 {
     letter-spacing: 0.08em;
 }
 
-
 .visual-word span {
     color: var(--accent-dark);
 }
-
 
 .campaign-visual {
     background:
@@ -1296,7 +1125,6 @@ h1 {
             rgba(200, 255, 74, 0.08)
         );
 }
-
 
 .funnel {
     width: 80%;
@@ -1308,10 +1136,8 @@ h1 {
     gap: 12px;
 }
 
-
 .funnel span {
     display: block;
-
     width: 100%;
 
     padding: 16px 18px;
@@ -1321,14 +1147,11 @@ h1 {
     background: rgba(255, 255, 255, 0.4);
 
     border: 1px solid rgba(29, 36, 33, 0.08);
-
     border-radius: 10px;
 
     font: 500 9px var(--mono);
-
     letter-spacing: 0.12em;
 }
-
 
 .analytics-visual {
     background:
@@ -1338,7 +1161,6 @@ h1 {
             rgba(200, 255, 74, 0.1)
         );
 }
-
 
 .chart-bars {
     width: 76%;
@@ -1352,7 +1174,6 @@ h1 {
 
     gap: 10px;
 }
-
 
 .chart-bars i {
     display: block;
@@ -1369,7 +1190,6 @@ h1 {
         );
 }
 
-
 .chart-label {
     position: absolute;
 
@@ -1384,10 +1204,8 @@ h1 {
     font: 500 8px var(--mono);
 
     letter-spacing: 0.12em;
-
     text-transform: uppercase;
 }
-
 
 .project-tags {
     margin-top: 22px;
@@ -1411,7 +1229,6 @@ h1 {
     padding-bottom: 100px;
 }
 
-
 .contact-layout {
     display: grid;
 
@@ -1422,15 +1239,12 @@ h1 {
     align-items: start;
 }
 
-
 .contact-copy h2 {
     margin: 18px 0 24px;
 
     font-size: clamp(42px, 5vw, 76px);
-
     line-height: 0.95;
 }
-
 
 .contact-copy > p {
     max-width: 560px;
@@ -1438,7 +1252,6 @@ h1 {
     color: var(--muted);
 
     font-size: 15px;
-
     line-height: 1.8;
 }
 
@@ -1456,17 +1269,13 @@ h1 {
     gap: 10px;
 }
 
-
 .contact-social-label {
     color: var(--muted);
 
     font: 500 10px var(--mono);
-
     letter-spacing: 0.12em;
-
     text-transform: uppercase;
 }
-
 
 .social-link.linkedin-profile {
     width: min(100%, 420px);
@@ -1482,7 +1291,6 @@ h1 {
     background: rgba(255, 255, 255, 0.35);
 
     border: 1px solid var(--line);
-
     border-radius: 14px;
 
     transition:
@@ -1491,7 +1299,6 @@ h1 {
         background 0.25s ease,
         box-shadow 0.25s ease;
 }
-
 
 .social-link.linkedin-profile:hover {
     transform: translateY(-3px);
@@ -1504,7 +1311,6 @@ h1 {
         0 10px 25px rgba(29, 36, 33, 0.08);
 }
 
-
 .linkedin-icon-box {
     width: 38px;
     height: 38px;
@@ -1515,12 +1321,10 @@ h1 {
     place-items: center;
 
     background: var(--linkedin);
-
     color: #ffffff;
 
     border-radius: 8px;
 }
-
 
 .linkedin-icon-box .linkedin-icon {
     width: 22px;
@@ -1531,7 +1335,6 @@ h1 {
     fill: currentColor;
 }
 
-
 .linkedin-text {
     min-width: 0;
 
@@ -1541,24 +1344,19 @@ h1 {
     gap: 3px;
 }
 
-
 .linkedin-text strong {
     color: var(--ink);
 
     font-size: 14px;
-
     font-weight: 700;
 }
-
 
 .linkedin-text small {
     color: var(--muted);
 
     font-size: 11px;
-
     line-height: 1.4;
 }
-
 
 .linkedin-arrow {
     margin-left: auto;
@@ -1570,7 +1368,6 @@ h1 {
     transition:
         transform 0.25s ease;
 }
-
 
 .social-link.linkedin-profile:hover .linkedin-arrow {
     transform: translate(3px, -3px);
@@ -1585,16 +1382,10 @@ h1 {
     min-width: 0;
 }
 
-
-/* =========================================================
-   CONTACT PANEL
-========================================================= */
-
 .contact-panel {
     min-height: 280px;
 
     position: relative;
-
     overflow: hidden;
 
     display: flex;
@@ -1604,12 +1395,10 @@ h1 {
     padding: 28px;
 
     background: var(--dark);
-
     color: #fff;
 
     border-radius: 28px;
 }
-
 
 .contact-panel p {
     margin-bottom: 10px;
@@ -1617,12 +1406,9 @@ h1 {
     color: rgba(255, 255, 255, 0.65);
 
     font: 500 9px var(--mono);
-
     letter-spacing: 0.1em;
-
     text-transform: uppercase;
 }
-
 
 .contact-panel-title {
     position: relative;
@@ -1635,12 +1421,10 @@ h1 {
     color: #fff;
 
     font-size: 24px;
-
     font-weight: 600;
 
     letter-spacing: -0.04em;
 }
-
 
 .contact-panel-subtitle {
     position: relative;
@@ -1651,10 +1435,8 @@ h1 {
     font: 9px var(--mono);
 
     letter-spacing: 0.08em;
-
     text-transform: uppercase;
 }
-
 
 .contact-panel-graphic {
     width: 190px;
@@ -1666,10 +1448,8 @@ h1 {
     top: -25px;
 
     border: 1px solid rgba(255, 255, 255, 0.12);
-
     border-radius: 50%;
 }
-
 
 .contact-panel-graphic::before,
 .contact-panel-graphic::after {
@@ -1689,18 +1469,15 @@ h1 {
         rotate(45deg);
 }
 
-
 .contact-panel-graphic::before {
     width: 130px;
     height: 220px;
 }
 
-
 .contact-panel-graphic::after {
     width: 220px;
     height: 130px;
 }
-
 
 .panel-orbit {
     width: 10px;
@@ -1726,7 +1503,6 @@ h1 {
 
 .contact-form {
     width: 100%;
-
     max-width: 620px;
 
     display: grid;
@@ -1739,7 +1515,6 @@ h1 {
     margin-top: 22px;
 }
 
-
 .form-field {
     min-width: 0;
 
@@ -1749,35 +1524,27 @@ h1 {
     gap: 7px;
 }
 
-
 .form-field label {
     color: var(--muted);
 
     font: 500 9px var(--mono);
-
     letter-spacing: 0.08em;
-
     text-transform: uppercase;
 }
-
 
 .form-field-message {
     grid-column: 1 / -1;
 }
 
-
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-
     min-width: 0;
 
     border: 1px solid var(--line);
-
     border-radius: 10px;
 
     background: rgba(255, 255, 255, 0.04);
-
     color: var(--ink);
 
     outline: none;
@@ -1788,7 +1555,6 @@ h1 {
         background 0.2s ease;
 }
 
-
 .contact-form input {
     min-height: 46px;
 
@@ -1797,17 +1563,14 @@ h1 {
     font-size: 13px;
 }
 
-
 .contact-form textarea {
     min-height: 110px;
 
     padding: 12px 14px;
 
     line-height: 1.6;
-
     font-size: 13px;
 }
-
 
 .contact-form input:focus,
 .contact-form textarea:focus {
@@ -1819,12 +1582,10 @@ h1 {
         0 0 0 3px rgba(109, 143, 0, 0.08);
 }
 
-
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: var(--muted);
 }
-
 
 .contact-submit {
     grid-column: 1 / -1;
@@ -1841,17 +1602,14 @@ h1 {
     padding: 12px 18px;
 
     border: 0;
-
     border-radius: 10px;
 
     background: var(--dark);
-
     color: var(--bg);
 
     font: 500 10px var(--mono);
 
     letter-spacing: 0.08em;
-
     text-transform: uppercase;
 
     transition:
@@ -1859,13 +1617,10 @@ h1 {
         background 0.25s ease;
 }
 
-
 .contact-submit:hover {
     background: var(--accent-dark);
-
     transform: translateY(-2px);
 }
-
 
 .contact-submit:active {
     transform: translateY(0);
@@ -1896,7 +1651,6 @@ h1 {
     border-radius: 10px;
 
     background: var(--dark);
-
     color: var(--bg);
 
     font: 500 11px var(--mono);
@@ -1909,13 +1663,10 @@ h1 {
         0 8px 24px rgba(29, 36, 33, 0.18);
 }
 
-
 #formPopup.error {
     background: #8a2f2f;
-
     color: #fff;
 }
-
 
 #formPopup.show {
     display: block;
@@ -1923,7 +1674,6 @@ h1 {
     animation:
         popupIn 0.3s ease forwards;
 }
-
 
 @keyframes popupIn {
 
@@ -1970,15 +1720,12 @@ h1 {
     font: 500 10px var(--mono);
 
     letter-spacing: 0.08em;
-
     text-transform: uppercase;
 }
-
 
 .footer-symbol {
     color: var(--accent-dark);
 }
-
 
 .footer-links {
     display: flex;
@@ -1990,7 +1737,6 @@ h1 {
 
     flex-wrap: wrap;
 }
-
 
 .footer-links a {
     display: inline-flex;
@@ -2008,10 +1754,8 @@ h1 {
         transform 0.25s ease;
 }
 
-
 .footer-links a:hover {
     color: var(--ink);
-
     transform: translateY(-2px);
 }
 
@@ -2024,9 +1768,7 @@ h1 {
 .footer-links a:focus-visible,
 .button-linkedin:focus-visible {
     outline: 3px solid var(--accent);
-
     outline-offset: 4px;
-
     border-radius: 6px;
 }
 
@@ -2046,7 +1788,6 @@ h1 {
     padding: 120px 0 30px;
 }
 
-
 .back-link {
     display: inline-flex;
 
@@ -2061,7 +1802,6 @@ h1 {
     font: 500 10px var(--mono);
 
     letter-spacing: 0.08em;
-
     text-transform: uppercase;
 
     transition:
@@ -2069,13 +1809,10 @@ h1 {
         transform 0.2s ease;
 }
 
-
 .back-link:hover {
     color: var(--ink);
-
     transform: translateX(-3px);
 }
-
 
 .project-hero {
     padding: 32px 28px;
@@ -2083,17 +1820,14 @@ h1 {
     background: rgba(255, 255, 255, 0.18);
 
     border: 1px solid var(--line);
-
     border-radius: 28px;
 
     box-shadow:
         0 18px 40px rgba(29, 36, 33, 0.04);
 }
 
-
 .project-hero h1 {
     margin-top: 18px;
-
     margin-bottom: 20px;
 
     font-size: clamp(38px, 5vw, 78px);
@@ -2101,17 +1835,14 @@ h1 {
     line-height: 0.94;
 }
 
-
 .project-intro {
     max-width: 640px;
 
     color: var(--muted);
 
     font-size: 15px;
-
     line-height: 1.8;
 }
-
 
 .project-meta-pills {
     display: flex;
@@ -2123,7 +1854,6 @@ h1 {
     margin-top: 28px;
 }
 
-
 .project-meta-pills span {
     display: inline-block;
 
@@ -2132,21 +1862,17 @@ h1 {
     background: rgba(255, 255, 255, 0.18);
 
     border: 1px solid var(--line);
-
     border-radius: 999px;
 
     font: 500 8px var(--mono);
 
     letter-spacing: 0.08em;
-
     text-transform: uppercase;
 }
-
 
 .project-page {
     padding-top: 40px;
 }
-
 
 .case-study-section {
     padding: 36px 0 12px;
@@ -2155,11 +1881,9 @@ h1 {
         1px solid rgba(29, 36, 33, 0.08);
 }
 
-
 .case-study-section:last-child {
     border-bottom: 0;
 }
-
 
 .section-number {
     margin-bottom: 18px;
@@ -2171,7 +1895,6 @@ h1 {
     letter-spacing: 0.12em;
 }
 
-
 .case-study-section h2 {
     margin-bottom: 18px;
 
@@ -2179,7 +1902,6 @@ h1 {
 
     line-height: 1.02;
 }
-
 
 .case-study-section p,
 .case-study-section li {
@@ -2190,13 +1912,10 @@ h1 {
     line-height: 1.9;
 }
 
-
 .case-study-section ul {
     margin-top: 18px;
-
     padding-left: 22px;
 }
-
 
 .strategy-summary {
     display: grid;
@@ -2209,7 +1928,6 @@ h1 {
     margin-top: 26px;
 }
 
-
 .strategy-summary > div,
 .content-card {
     padding: 22px 20px;
@@ -2217,10 +1935,8 @@ h1 {
     background: rgba(255, 255, 255, 0.12);
 
     border: 1px solid var(--line);
-
     border-radius: 20px;
 }
-
 
 .strategy-summary h3,
 .content-card h2 {
@@ -2228,7 +1944,6 @@ h1 {
 
     font-size: clamp(22px, 2vw, 30px);
 }
-
 
 .project-grid {
     display: grid;
@@ -2241,7 +1956,6 @@ h1 {
     margin-top: 24px;
 }
 
-
 .project-content-grid {
     display: grid;
 
@@ -2253,18 +1967,14 @@ h1 {
     margin-top: 28px;
 }
 
-
 .content-card p + p {
     margin-top: 14px;
 }
 
-
 .content-card ul {
     margin-top: 14px;
-
     padding-left: 20px;
 }
-
 
 .content-card li {
     margin-bottom: 10px;
@@ -2277,16 +1987,13 @@ h1 {
 
 .reveal {
     opacity: 1;
-
     transform: none;
 }
-
 
 .reveal.visible {
     animation:
         revealUp 0.7s ease both;
 }
-
 
 @keyframes revealUp {
 
@@ -2306,11 +2013,9 @@ h1 {
 
 }
 
-
 .reveal.delay-1.visible {
     animation-delay: 0.12s;
 }
-
 
 .reveal.delay-2.visible {
     animation-delay: 0.2s;
@@ -2326,7 +2031,6 @@ h1 {
     .hero-grid {
         gap: 50px;
     }
-
 
     .hero-copy,
     .hero-visual,
@@ -2344,21 +2048,17 @@ h1 {
         max-width: 100%;
     }
 
-
     h1 {
         font-size: clamp(50px, 7.5vw, 90px);
     }
-
 
     .section-heading h2 {
         font-size: clamp(36px, 5.2vw, 58px);
     }
 
-
     .project-card h3 {
         font-size: clamp(34px, 4vw, 50px);
     }
-
 
     .eyebrow,
     .project-meta,
@@ -2369,7 +2069,6 @@ h1 {
         max-width: 100%;
     }
 
-
     .eyebrow,
     .project-meta,
     .project-meta-pills span,
@@ -2377,7 +2076,6 @@ h1 {
     .project-tags span {
         overflow-wrap: anywhere;
     }
-
 }
 
 
@@ -2395,46 +2093,36 @@ h1 {
         grid-template-columns: 1fr;
     }
 
-
     .split-heading {
         flex-direction: column;
-
         align-items: flex-start;
     }
-
 
     .capability-grid,
     .strategy-summary {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-
     .capability-card:last-child {
         grid-column: 1 / -1;
     }
-
 
     .hero-visual {
         min-height: 400px;
     }
 
-
     .orbital-card {
         height: 400px;
     }
 
-
     .contact-form {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
         max-width: 100%;
     }
-
 
     .project-content {
         gap: 28px;
     }
-
 
     .project-card h3,
     .project-card p,
@@ -2448,7 +2136,6 @@ h1 {
         max-width: 100%;
         overflow-wrap: break-word;
     }
-
 }
 
 
@@ -2459,16 +2146,13 @@ h1 {
 @media (max-width: 820px) {
 
     .site-header {
-        width: calc(100% - 40px);
-
-        padding: 18px 0;
+        width: calc(100% - 36px);
+        padding: 16px 0;
     }
-
 
     .brand {
         min-width: 0;
     }
-
 
     .brand-name {
         max-width: 260px;
@@ -2480,19 +2164,18 @@ h1 {
         white-space: nowrap;
     }
 
-
     .nav {
         display: none;
 
         position: absolute;
 
-        top: 68px;
+        top: 62px;
         left: 0;
         right: 0;
 
         width: 100%;
 
-        padding: 22px;
+        padding: 12px;
 
         flex-direction: column;
 
@@ -2503,8 +2186,7 @@ h1 {
         background: rgba(243, 241, 235, 0.98);
 
         border: 1px solid var(--line);
-
-        border-radius: 20px;
+        border-radius: 18px;
 
         box-shadow:
             0 16px 40px rgba(29, 36, 33, 0.1);
@@ -2512,69 +2194,63 @@ h1 {
         backdrop-filter: blur(16px);
     }
 
-
     .nav.open {
         display: flex;
     }
 
-
     .nav a {
         width: 100%;
 
-        padding: 14px 4px;
+        padding: 14px 12px;
 
-        border-bottom: 1px solid rgba(29, 36, 33, 0.08);
+        border-bottom:
+            1px solid rgba(29, 36, 33, 0.08);
 
         opacity: 1;
     }
-
 
     .nav a:last-child {
         border-bottom: 0;
     }
 
-
     .nav a:hover {
         transform: none;
     }
 
-
     .nav-cta {
         margin-top: 4px;
-
         padding-bottom: 14px;
     }
 
-
     .menu-toggle {
         display: block;
-
         flex-shrink: 0;
     }
-
 }
 
 
 /* =========================================================
-   MOBILE — PROPER MOBILE WEBSITE LAYOUT
+   MOBILE — APP STYLE
 ========================================================= */
 
 @media (max-width: 680px) {
 
     :root {
-        --mobile-gutter: 18px;
+        --mobile-gutter: 16px;
     }
 
+
+    /* -----------------------------------------------------
+       GLOBAL MOBILE
+    ----------------------------------------------------- */
 
     html {
-        scroll-padding-top: 76px;
+        scroll-padding-top: 72px;
     }
-
 
     body {
         font-size: 14px;
     }
-
 
     .site-header,
     .section,
@@ -2583,16 +2259,36 @@ h1 {
         width: calc(100% - (var(--mobile-gutter) * 2));
     }
 
-
-    .site-header {
-        padding: 16px 0;
+    .section {
+        padding: 58px 0;
     }
 
+    /*
+       Subtle separators make the page feel organised
+       without adding heavy visual clutter.
+    */
+
+    .about-section,
+    .capabilities-section,
+    .work-section,
+    .journey-section,
+    .contact-section {
+        border-top:
+            1px solid rgba(29, 36, 33, 0.08);
+    }
+
+
+    /* -----------------------------------------------------
+       HEADER
+    ----------------------------------------------------- */
+
+    .site-header {
+        padding: 14px 0;
+    }
 
     .brand {
         gap: 9px;
     }
-
 
     .brand-mark {
         width: 34px;
@@ -2601,28 +2297,17 @@ h1 {
         font-size: 19px;
     }
 
-
     .brand-name {
-        max-width: calc(100vw - 105px);
+        max-width: calc(100vw - 100px);
 
         font-size: 8px;
 
-        letter-spacing: 0.06em;
+        letter-spacing: 0.05em;
     }
-
 
     .menu-toggle {
         width: 40px;
         height: 40px;
-    }
-
-
-    .nav {
-        top: 62px;
-
-        padding: 18px;
-
-        border-radius: 18px;
     }
 
 
@@ -2633,192 +2318,159 @@ h1 {
     .hero {
         min-height: auto;
 
-        padding-top: 112px;
-
-        padding-bottom: 70px;
+        padding-top: 96px;
+        padding-bottom: 48px;
     }
-
 
     .hero-grid {
         display: flex;
 
         flex-direction: column;
 
-        gap: 42px;
+        gap: 26px;
 
         align-items: stretch;
     }
-
 
     .hero-copy {
         width: 100%;
     }
 
-
     .eyebrow {
-        font-size: 8px;
-
-        line-height: 1.6;
+        font-size: 7px;
+        line-height: 1.5;
     }
 
-
     h1 {
-        margin: 20px 0 24px;
+        margin: 17px 0 18px;
 
-        font-size: clamp(48px, 14vw, 70px);
+        font-size: clamp(43px, 13vw, 62px);
 
         line-height: 0.91;
 
-        letter-spacing: -0.07em;
+        letter-spacing: -0.075em;
     }
-
 
     .hero-intro {
-        max-width: 100%;
+        max-width: 330px;
 
-        font-size: 14px;
-
-        line-height: 1.75;
+        font-size: 13px;
+        line-height: 1.6;
     }
 
+    /*
+       Two main actions sit side-by-side.
+       LinkedIn gets a full-width row underneath.
+    */
 
     .hero-actions {
         width: 100%;
 
         display: grid;
 
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
 
-        gap: 10px;
+        gap: 8px;
 
-        margin-top: 28px;
+        margin-top: 22px;
     }
-
 
     .button {
         width: 100%;
 
-        min-height: 50px;
+        min-height: 46px;
 
-        justify-content: space-between;
+        padding: 12px 13px;
 
-        padding: 14px 16px;
+        gap: 8px;
+
+        font-size: 8px;
     }
-
 
     .button-linkedin {
+        grid-column: 1 / -1;
+
         justify-content: center;
+
+        min-height: 44px;
     }
 
+    .button-linkedin .linkedin-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO VISUAL — COMPACT
+    ----------------------------------------------------- */
 
     .hero-visual {
         width: 100%;
 
         min-height: auto;
-
-        margin-top: 0;
     }
-
 
     .orbital-card {
         width: 100%;
 
-        height: min(86vw, 350px);
+        height: 250px;
+        min-height: 0;
 
-        min-height: 300px;
-
-        border-radius: 22px;
+        border-radius: 19px;
     }
-
 
     .orbital-label {
-        top: 18px;
-        left: 18px;
+        top: 15px;
+        left: 15px;
 
-        font-size: 8px;
-    }
-
-
-    .orbit-one {
-        width: 70vw;
-        height: 70vw;
-
-        max-width: 250px;
-        max-height: 250px;
-    }
-
-
-    .orbit-two {
-        width: 45vw;
-        height: 82vw;
-
-        max-width: 160px;
-        max-height: 290px;
-    }
-
-
-    .orbit-core {
-        width: 98px;
-        height: 98px;
-    }
-
-
-    .core-symbol {
-        font-size: 22px;
-    }
-
-
-    .orbit-core small {
         font-size: 7px;
     }
 
+    .orbit-one {
+        width: 205px;
+        height: 205px;
+    }
+
+    .orbit-two {
+        width: 135px;
+        height: 235px;
+    }
+
+    .orbit-core {
+        width: 82px;
+        height: 82px;
+    }
+
+    .core-symbol {
+        font-size: 19px;
+    }
+
+    .orbit-core small {
+        font-size: 6px;
+    }
 
     .orbit-tag {
-        font-size: 8px;
+        font-size: 7px;
     }
-
-
-    .tag-customer {
-        left: 7%;
-    }
-
-
-    .tag-brand {
-        right: 7%;
-    }
-
-
-    .tag-growth {
-        left: 14%;
-    }
-
 
     .visual-caption {
-        display: grid;
+        padding-top: 9px;
 
-        grid-template-columns: auto 1fr;
+        display: flex;
 
-        align-items: start;
+        align-items: center;
 
-        gap: 10px;
+        gap: 8px;
 
-        padding-top: 11px;
+        font-size: 7px;
 
-        font-size: 8px;
-
-        line-height: 1.5;
+        line-height: 1.4;
     }
-
-
-    .visual-caption span {
-        max-width: none;
-    }
-
 
     .visual-caption span:last-child {
         text-align: right;
     }
-
 
     .scroll-cue {
         display: none;
@@ -2826,39 +2478,37 @@ h1 {
 
 
     /* -----------------------------------------------------
-       SECTIONS
+       SECTION HEADINGS
     ----------------------------------------------------- */
 
-    .section {
-        padding: 82px 0;
-    }
-
-
     .section-heading {
-        margin-bottom: 32px;
+        margin-bottom: 24px;
     }
-
 
     .section-heading h2 {
-        margin-top: 14px;
+        margin-top: 11px;
 
-        font-size: clamp(36px, 11vw, 52px);
+        font-size: clamp(31px, 9.5vw, 44px);
 
         line-height: 0.96;
     }
 
-
     .heading-note {
         max-width: 100%;
 
-        font-size: 13px;
+        margin-top: 14px;
 
-        line-height: 1.75;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .split-heading {
+        display: block;
     }
 
 
     /* -----------------------------------------------------
-       ABOUT
+       ABOUT — PROFILE STYLE
     ----------------------------------------------------- */
 
     .about-grid {
@@ -2866,522 +2516,647 @@ h1 {
 
         flex-direction: column;
 
-        gap: 34px;
+        gap: 20px;
     }
 
+    .about-statement {
+        display: flex;
+        flex-direction: column;
+    }
 
     .large-copy {
-        margin-bottom: 22px;
+        margin-bottom: 15px;
 
-        font-size: clamp(31px, 9vw, 43px);
+        font-size: clamp(27px, 8vw, 37px);
 
-        line-height: 1.01;
+        line-height: 1.02;
     }
-
 
     .about-statement > p:not(.large-copy) {
         max-width: 100%;
 
-        font-size: 14px;
-
-        line-height: 1.85;
+        font-size: 13px;
+        line-height: 1.7;
     }
-
 
     .about-side {
         width: 100%;
 
-        gap: 12px;
+        display: grid;
+
+        gap: 9px;
     }
 
+    /*
+       Profile image is intentionally shorter on mobile.
+       This saves a lot of scrolling.
+    */
 
     .profile-card {
-        width: 100%;
+        padding: 10px;
 
-        padding: 12px;
-
-        border-radius: 20px;
+        border-radius: 17px;
     }
-
 
     .profile-card img {
-        width: 100%;
+        height: 210px;
 
-        height: min(92vw, 360px);
+        margin-bottom: 11px;
 
-        margin-bottom: 14px;
-
-        border-radius: 15px;
+        border-radius: 13px;
     }
-
 
     .profile-card p {
-        padding: 2px 4px 5px;
+        padding: 2px 3px 3px;
 
-        font-size: 12px;
-
-        line-height: 1.7;
+        font-size: 11px;
+        line-height: 1.55;
     }
 
+    /*
+       Compact horizontal stat rows instead of large cards.
+    */
 
     .mini-stat {
-        grid-template-columns: 38px minmax(0, 1fr);
+        grid-template-columns: 28px 1fr;
 
-        gap: 7px 12px;
+        gap: 3px 10px;
 
-        padding: 17px 15px;
+        padding: 12px 13px;
 
-        border-radius: 16px;
+        border-radius: 13px;
     }
-
 
     .mini-stat span {
-        font-size: 10px;
+        font-size: 8px;
     }
-
 
     .mini-stat strong {
-        font-size: 15px;
-
-        line-height: 1.3;
+        font-size: 13px;
+        line-height: 1.25;
     }
-
 
     .mini-stat small {
         grid-column: 2;
 
-        font-size: 12px;
-
-        line-height: 1.65;
+        font-size: 10px;
+        line-height: 1.45;
     }
 
 
     /* -----------------------------------------------------
-       CAPABILITIES
+       CAPABILITIES — 2 COLUMN APP CARDS
     ----------------------------------------------------- */
 
     .capability-grid {
-        display: flex;
+        display: grid;
 
-        flex-direction: column;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
-        gap: 14px;
+        gap: 8px;
     }
-
 
     .capability-card,
     .capability-card:last-child {
         width: 100%;
 
-        padding: 24px 19px 20px;
+        padding: 17px 13px 14px;
 
-        border-radius: 21px;
+        border-radius: 16px;
     }
 
+    /*
+       Featured card no longer stretches across the entire
+       screen. All three cards form a compact dashboard.
+    */
 
     .card-number {
-        margin-bottom: 18px;
+        margin-bottom: 12px;
 
-        font-size: 9px;
+        font-size: 7px;
     }
-
 
     .card-icon {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
 
-        font-size: 25px;
+        font-size: 20px;
     }
-
 
     .capability-card h3 {
-        margin-bottom: 13px;
+        margin-bottom: 9px;
 
-        font-size: clamp(30px, 9vw, 38px);
+        font-size: clamp(20px, 6vw, 27px);
 
-        line-height: 1;
+        line-height: 0.98;
     }
-
 
     .capability-card p {
-        margin-bottom: 20px;
+        margin-bottom: 13px;
 
-        font-size: 13px;
-
-        line-height: 1.75;
-    }
-
-
-    .card-tags {
-        gap: 6px;
-    }
-
-
-    .card-tags span {
-        padding: 7px 9px;
-
-        font-size: 7px;
-    }
-
-
-    /* -----------------------------------------------------
-       WORK
-    ----------------------------------------------------- */
-
-    .work-section {
-        padding-bottom: 82px;
-    }
-
-
-    .project-list {
-        gap: 16px;
-    }
-
-
-    .project-card {
-        width: 100%;
-
-        padding: 20px 16px 17px;
-
-        border-radius: 21px;
-    }
-
-
-    .project-meta {
-        flex-direction: row;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        gap: 10px;
-
-        margin-bottom: 19px;
-
-        font-size: 7px;
+        font-size: 10px;
 
         line-height: 1.5;
     }
 
-
-    .project-meta span:last-child {
-        text-align: right;
+    .card-tags {
+        gap: 4px;
     }
 
+    .card-tags span {
+        padding: 5px 6px;
+
+        font-size: 5.5px;
+
+        letter-spacing: 0.05em;
+    }
+
+
+    /*
+       Third capability card fills the bottom row.
+       It gets slightly more breathing room.
+    */
+
+    .capability-card:nth-child(3) {
+        grid-column: 1 / -1;
+
+        display: grid;
+
+        grid-template-columns: 30px 1fr;
+
+        column-gap: 10px;
+    }
+
+    .capability-card:nth-child(3) .card-number {
+        grid-column: 1;
+    }
+
+    .capability-card:nth-child(3) .card-icon {
+        grid-column: 1;
+    }
+
+    .capability-card:nth-child(3) h3,
+    .capability-card:nth-child(3) p,
+    .capability-card:nth-child(3) .card-tags {
+        grid-column: 2;
+    }
+
+    .capability-card:nth-child(3) h3 {
+        grid-row: 1 / span 2;
+
+        align-self: center;
+    }
+
+    .capability-card:nth-child(3) p {
+        grid-row: 3;
+    }
+
+    .capability-card:nth-child(3) .card-tags {
+        grid-row: 4;
+    }
+
+
+    /* -----------------------------------------------------
+       WORK — HORIZONTAL PROJECT CARDS
+    ----------------------------------------------------- */
+
+    .work-section {
+        padding-bottom: 58px;
+    }
+
+    .project-list {
+        display: flex;
+
+        flex-direction: row;
+
+        gap: 10px;
+
+        overflow-x: auto;
+
+        padding:
+            2px
+            calc((var(--mobile-gutter)) - 2px)
+            12px
+            calc((var(--mobile-gutter)) - 2px);
+
+        margin-left: calc(var(--mobile-gutter) * -1);
+        margin-right: calc(var(--mobile-gutter) * -1);
+
+        scroll-snap-type: x mandatory;
+
+        scrollbar-width: none;
+
+        overscroll-behavior-x: contain;
+    }
+
+    .project-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .project-card {
+        flex: 0 0 86%;
+
+        width: 86%;
+
+        padding: 16px 14px 14px;
+
+        border-radius: 17px;
+
+        scroll-snap-align: start;
+    }
+
+    .project-card:hover {
+        transform: none;
+    }
+
+    .project-meta {
+        margin-bottom: 13px;
+
+        gap: 8px;
+
+        font-size: 6px;
+
+        line-height: 1.4;
+    }
 
     .project-content {
         display: flex;
 
         flex-direction: column;
 
-        gap: 20px;
+        gap: 13px;
 
         align-items: stretch;
     }
 
-
-    .project-content > div {
-        width: 100%;
-    }
-
-
     .project-card h3 {
-        margin-bottom: 14px;
+        margin-bottom: 9px;
 
-        font-size: clamp(32px, 10vw, 46px);
+        font-size: clamp(27px, 8vw, 37px);
 
-        line-height: 0.98;
+        line-height: 0.97;
     }
-
 
     .project-card p {
         max-width: 100%;
 
-        margin-bottom: 17px;
+        margin-bottom: 11px;
 
-        font-size: 13px;
+        font-size: 11px;
 
-        line-height: 1.75;
+        line-height: 1.55;
     }
-
 
     .text-link {
-        gap: 9px;
+        gap: 7px;
 
-        padding-bottom: 5px;
+        padding-bottom: 4px;
 
-        font-size: 8px;
+        font-size: 7px;
     }
-
 
     .project-visual {
         width: 100%;
 
-        min-height: 190px;
+        min-height: 145px;
+        height: 145px;
 
-        height: 190px;
-
-        border-radius: 17px;
+        border-radius: 13px;
     }
-
 
     .visual-word {
         max-width: 90%;
 
-        font-size: 19px;
+        font-size: 16px;
 
-        line-height: 1.5;
-
-        overflow-wrap: break-word;
+        line-height: 1.4;
     }
-
 
     .funnel {
-        width: 72%;
-
-        gap: 8px;
-    }
-
-
-    .funnel span {
-        padding: 12px 10px;
-
-        border-radius: 8px;
-
-        font-size: 7px;
-    }
-
-
-    .chart-bars {
-        width: 72%;
-
-        height: 110px;
-
-        gap: 7px;
-    }
-
-
-    .chart-label {
-        right: 12px;
-        bottom: 12px;
-
-        font-size: 6px;
-    }
-
-
-    .project-tags {
-        margin-top: 16px;
+        width: 70%;
 
         gap: 6px;
     }
 
+    .funnel span {
+        padding: 9px 8px;
+
+        border-radius: 7px;
+
+        font-size: 6px;
+    }
+
+    .chart-bars {
+        width: 72%;
+
+        height: 90px;
+
+        gap: 6px;
+    }
+
+    .chart-label {
+        right: 9px;
+        bottom: 9px;
+
+        font-size: 5px;
+    }
+
+    .project-tags {
+        margin-top: 11px;
+
+        gap: 5px;
+    }
 
     .project-tags span {
-        padding: 7px 9px;
+        padding: 5px 7px;
 
-        font-size: 7px;
+        font-size: 5.5px;
+    }
 
-        overflow-wrap: anywhere;
+
+    /*
+       Swipe indicator under the cards.
+       The cards themselves remain clean.
+    */
+
+    .project-list::after {
+        content: "SWIPE →";
+
+        flex: 0 0 auto;
+
+        align-self: center;
+
+        color: var(--muted);
+
+        font: 500 7px var(--mono);
+
+        letter-spacing: 0.1em;
     }
 
 
     /* -----------------------------------------------------
-       JOURNEY
+       JOURNEY — COMPACT TIMELINE FEEL
     ----------------------------------------------------- */
 
     .journey-section {
-        padding-top: 82px;
+        padding-top: 58px;
+    }
+
+    .journey-section .about-grid {
+        gap: 18px;
+    }
+
+    .journey-section .large-copy {
+        font-size: clamp(25px, 7.5vw, 34px);
+    }
+
+    .journey-section .about-statement > p:not(.large-copy) {
+        font-size: 12px;
+
+        line-height: 1.65;
+    }
+
+    /*
+       The first Journey profile card becomes a simple
+       highlighted statement rather than a large image card.
+    */
+
+    .journey-section .profile-card {
+        padding: 16px;
+
+        background: var(--dark);
+
+        border-color: var(--dark);
+
+        border-radius: 16px;
+    }
+
+    .journey-section .profile-card p {
+        padding: 0;
+
+        color: rgba(255, 255, 255, 0.78);
+
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .journey-section .mini-stat {
+        padding: 11px 13px;
     }
 
 
     /* -----------------------------------------------------
-       CONTACT
+       CONTACT — COMPACT CTA
     ----------------------------------------------------- */
 
     .contact-section {
-        padding-bottom: 70px;
+        padding-bottom: 50px;
     }
-
 
     .contact-layout {
         display: flex;
 
         flex-direction: column;
 
-        gap: 30px;
+        gap: 20px;
     }
 
-
     .contact-copy h2 {
-        margin: 15px 0 20px;
+        margin: 12px 0 16px;
 
-        font-size: clamp(42px, 12vw, 60px);
+        font-size: clamp(38px, 11vw, 54px);
 
         line-height: 0.94;
     }
 
-
     .contact-copy > p {
         max-width: 100%;
 
-        font-size: 14px;
+        font-size: 12px;
 
-        line-height: 1.8;
+        line-height: 1.65;
     }
-
 
     .contact-social {
-        margin-top: 24px;
+        margin-top: 17px;
 
-        gap: 9px;
+        gap: 7px;
     }
-
 
     .contact-social-label {
-        font-size: 8px;
+        font-size: 7px;
     }
-
 
     .social-link.linkedin-profile {
         width: 100%;
 
-        min-height: 60px;
+        min-height: 53px;
 
-        padding: 11px 12px;
+        padding: 9px 10px;
 
-        border-radius: 13px;
+        gap: 10px;
+
+        border-radius: 12px;
     }
-
 
     .linkedin-icon-box {
-        width: 36px;
-        height: 36px;
-    }
+        width: 32px;
+        height: 32px;
 
+        border-radius: 7px;
+    }
 
     .linkedin-icon-box .linkedin-icon {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
     }
 
+    .linkedin-text {
+        gap: 2px;
+    }
 
     .linkedin-text strong {
-        font-size: 13px;
+        font-size: 11px;
     }
-
 
     .linkedin-text small {
-        font-size: 9px;
+        font-size: 8px;
     }
-
 
     .linkedin-arrow {
-        font-size: 16px;
+        font-size: 14px;
     }
 
+
+    /* -----------------------------------------------------
+       CONTACT PANEL
+    ----------------------------------------------------- */
 
     .contact-panel {
         width: 100%;
 
-        min-height: 220px;
+        min-height: 165px;
 
-        padding: 22px 20px;
+        padding: 18px 16px;
 
-        border-radius: 22px;
+        border-radius: 17px;
     }
 
-
-    .contact-panel-title {
-        max-width: 75%;
-
-        font-size: 21px;
-    }
-
-
-    .contact-panel-subtitle {
-        max-width: 75%;
+    .contact-panel p {
+        margin-bottom: 7px;
 
         font-size: 7px;
-
-        line-height: 1.6;
     }
 
+    .contact-panel-title {
+        max-width: 72%;
+
+        margin-bottom: 5px;
+
+        font-size: 18px;
+    }
+
+    .contact-panel-subtitle {
+        max-width: 72%;
+
+        font-size: 6px;
+
+        line-height: 1.5;
+    }
 
     .contact-panel-graphic {
-        width: 155px;
-        height: 155px;
+        width: 125px;
+        height: 125px;
 
-        right: -25px;
-        top: -28px;
+        right: -24px;
+        top: -25px;
     }
-
 
     .contact-panel-graphic::before {
-        width: 105px;
-        height: 175px;
+        width: 84px;
+        height: 145px;
     }
-
 
     .contact-panel-graphic::after {
-        width: 175px;
-        height: 105px;
+        width: 145px;
+        height: 84px;
     }
 
+    .panel-orbit {
+        width: 8px;
+        height: 8px;
+    }
+
+
+    /* -----------------------------------------------------
+       FORM
+    ----------------------------------------------------- */
 
     .contact-form {
         width: 100%;
 
+        display: grid;
+
         grid-template-columns: 1fr;
 
-        gap: 11px;
+        gap: 9px;
 
-        margin-top: 17px;
+        margin-top: 13px;
     }
 
-
-    .form-field-message {
-        grid-column: auto;
+    .form-field {
+        gap: 5px;
     }
 
+    .form-field label {
+        font-size: 7px;
+    }
 
     .contact-form input,
     .contact-form textarea {
-        border-radius: 9px;
+        border-radius: 8px;
 
-        font-size: 13px;
+        font-size: 12px;
     }
-
 
     .contact-form input {
-        min-height: 48px;
-    }
+        min-height: 44px;
 
+        padding: 10px 12px;
+    }
 
     .contact-form textarea {
-        min-height: 115px;
-    }
+        min-height: 85px;
 
+        padding: 10px 12px;
+    }
 
     .contact-submit {
-        grid-column: auto;
-
         width: 100%;
 
-        min-height: 50px;
+        min-height: 45px;
 
-        border-radius: 10px;
+        border-radius: 8px;
+
+        font-size: 8px;
     }
 
 
+    /* -----------------------------------------------------
+       POPUP
+    ----------------------------------------------------- */
+
     #formPopup {
-        top: 12px;
+        top: 10px;
 
-        width: calc(100% - 28px);
+        width: calc(100% - 24px);
 
-        max-width: calc(100% - 28px);
+        max-width: calc(100% - 24px);
 
-        padding: 13px 15px;
+        padding: 11px 13px;
 
-        line-height: 1.5;
+        font-size: 9px;
+
+        line-height: 1.4;
     }
 
 
@@ -3390,142 +3165,125 @@ h1 {
     ----------------------------------------------------- */
 
     .project-header {
-        padding-top: 96px;
-
-        padding-bottom: 20px;
+        padding-top: 88px;
+        padding-bottom: 15px;
     }
-
 
     .back-link {
-        margin-bottom: 20px;
-
-        font-size: 8px;
-    }
-
-
-    .project-hero {
-        width: 100%;
-
-        padding: 22px 17px;
-
-        border-radius: 21px;
-    }
-
-
-    .project-hero h1 {
-        margin-top: 15px;
-
-        margin-bottom: 17px;
-
-        font-size: clamp(40px, 12vw, 58px);
-
-        line-height: 0.94;
-    }
-
-
-    .project-intro {
-        max-width: 100%;
-
-        font-size: 13px;
-
-        line-height: 1.75;
-    }
-
-
-    .project-meta-pills {
-        gap: 7px;
-
-        margin-top: 21px;
-    }
-
-
-    .project-meta-pills span {
-        padding: 7px 9px;
+        margin-bottom: 15px;
 
         font-size: 7px;
     }
 
+    .project-hero {
+        width: 100%;
+
+        padding: 18px 14px;
+
+        border-radius: 17px;
+    }
+
+    .project-hero h1 {
+        margin-top: 12px;
+        margin-bottom: 13px;
+
+        font-size: clamp(36px, 11vw, 52px);
+
+        line-height: 0.94;
+    }
+
+    .project-intro {
+        max-width: 100%;
+
+        font-size: 11px;
+        line-height: 1.65;
+    }
+
+    .project-meta-pills {
+        gap: 5px;
+
+        margin-top: 16px;
+    }
+
+    .project-meta-pills span {
+        padding: 5px 7px;
+
+        font-size: 6px;
+    }
 
     .project-page {
-        padding-top: 20px;
+        padding-top: 12px;
     }
-
 
     .case-study-section {
-        padding: 28px 0 10px;
+        padding: 23px 0 9px;
     }
-
 
     .section-number {
-        margin-bottom: 14px;
+        margin-bottom: 10px;
 
-        font-size: 8px;
+        font-size: 7px;
     }
-
 
     .case-study-section h2 {
-        margin-bottom: 14px;
+        margin-bottom: 11px;
 
-        font-size: clamp(29px, 9vw, 42px);
+        font-size: clamp(27px, 8.5vw, 39px);
     }
-
 
     .case-study-section p,
     .case-study-section li {
         max-width: 100%;
 
-        font-size: 13px;
+        font-size: 11px;
 
-        line-height: 1.8;
+        line-height: 1.65;
     }
-
 
     .case-study-section ul {
-        padding-left: 19px;
-    }
+        margin-top: 12px;
 
+        padding-left: 17px;
+    }
 
     .strategy-summary {
         grid-template-columns: 1fr;
 
-        gap: 12px;
+        gap: 8px;
 
-        margin-top: 20px;
+        margin-top: 16px;
     }
-
 
     .strategy-summary > div,
     .content-card {
-        padding: 18px 16px;
+        padding: 14px 13px;
 
-        border-radius: 17px;
+        border-radius: 14px;
     }
-
 
     .strategy-summary h3,
     .content-card h2 {
-        font-size: 23px;
-    }
+        margin-bottom: 8px;
 
+        font-size: 19px;
+    }
 
     .project-grid {
         grid-template-columns: 1fr;
 
-        gap: 12px;
+        gap: 8px;
     }
-
 
     .project-content-grid {
         grid-template-columns: 1fr;
 
-        gap: 12px;
+        gap: 8px;
 
-        margin-top: 20px;
+        margin-top: 15px;
     }
 
-
     .content-card p + p {
-        margin-top: 12px;
+        margin-top: 9px;
     }
 
 
@@ -3534,29 +3292,21 @@ h1 {
     ----------------------------------------------------- */
 
     .site-footer {
+        padding: 19px 0 28px;
+
         flex-direction: column;
 
         align-items: center;
 
-        padding: 24px 0 35px;
+        gap: 10px;
 
         text-align: center;
 
-        font-size: 8px;
+        font-size: 7px;
     }
-
-
-    .site-footer > * {
-        max-width: 100%;
-
-        overflow-wrap: break-word;
-    }
-
 
     .footer-links {
-        gap: 14px;
-
-        margin-top: 2px;
+        gap: 10px;
     }
 
 }
@@ -3572,123 +3322,93 @@ h1 {
         --mobile-gutter: 14px;
     }
 
-
     .site-header {
-        padding-top: 14px;
+        padding-top: 13px;
     }
-
 
     .brand-mark {
-        width: 32px;
-        height: 32px;
+        width: 31px;
+        height: 31px;
 
-        font-size: 18px;
+        font-size: 17px;
     }
-
 
     .brand-name {
-        max-width: calc(100vw - 92px);
+        max-width: calc(100vw - 88px);
 
         font-size: 7px;
     }
-
 
     .menu-toggle {
-        width: 38px;
-        height: 38px;
+        width: 37px;
+        height: 37px;
     }
-
 
     .hero {
-        padding-top: 102px;
-
-        padding-bottom: 60px;
+        padding-top: 91px;
+        padding-bottom: 42px;
     }
-
 
     h1 {
-        font-size: 43px;
+        font-size: 41px;
     }
-
 
     .hero-intro {
-        font-size: 13px;
+        font-size: 12px;
     }
-
 
     .orbital-card {
-        min-height: 280px;
-
-        height: 320px;
+        height: 225px;
     }
-
 
     .orbit-one {
-        width: 220px;
-        height: 220px;
+        width: 185px;
+        height: 185px;
     }
-
 
     .orbit-two {
-        width: 140px;
-        height: 260px;
+        width: 120px;
+        height: 215px;
     }
-
 
     .orbit-core {
-        width: 90px;
-        height: 90px;
+        width: 74px;
+        height: 74px;
     }
-
 
     .orbit-tag {
-        font-size: 7px;
+        font-size: 6px;
     }
-
-
-    .visual-caption {
-        font-size: 7px;
-    }
-
 
     .large-copy {
-        font-size: 30px;
+        font-size: 27px;
     }
-
 
     .capability-card h3 {
-        font-size: 29px;
+        font-size: 20px;
     }
 
+    .project-card {
+        flex-basis: 90%;
+        width: 90%;
+    }
 
     .project-card h3 {
-        font-size: 30px;
+        font-size: 28px;
     }
-
 
     .project-visual {
-        min-height: 175px;
-
-        height: 175px;
+        min-height: 135px;
+        height: 135px;
     }
-
 
     .contact-copy h2 {
-        font-size: 40px;
+        font-size: 37px;
     }
-
 
     .contact-panel {
-        min-height: 205px;
-
-        padding: 20px 17px;
+        min-height: 155px;
     }
-
-
-    .linkedin-text small {
-        display: none;
-    }
-
 }
 
 
@@ -3701,30 +3421,25 @@ h1 {
     .hero {
         min-height: auto;
 
-        padding-top: 110px;
-
-        padding-bottom: 70px;
+        padding-top: 100px;
+        padding-bottom: 60px;
     }
-
 
     .hero-grid {
         grid-template-columns: 1fr 1fr;
 
         display: grid;
 
-        gap: 30px;
+        gap: 25px;
     }
-
 
     .scroll-cue {
         display: none;
     }
 
-
     .orbital-card {
-        height: 300px;
+        height: 270px;
     }
-
 }
 
 
@@ -3738,14 +3453,12 @@ h1 {
         display: none;
     }
 
-
     .button:hover,
     .project-card:hover,
     .capability-card:hover,
     .social-link.linkedin-profile:hover {
         transform: none;
     }
-
 }
 
 
@@ -3761,7 +3474,6 @@ h1 {
     .site-footer {
         max-width: var(--max);
     }
-
 }
 
 
@@ -3775,15 +3487,11 @@ h1 {
         scroll-behavior: auto;
     }
 
-
     .reveal {
         opacity: 1;
-
         transform: none;
-
         animation: none !important;
     }
-
 
     .button,
     .nav a,
@@ -3798,5 +3506,4 @@ h1 {
     .linkedin-arrow {
         transition: none;
     }
-
 }
