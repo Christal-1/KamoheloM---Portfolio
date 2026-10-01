@@ -2858,5 +2858,99 @@ h1 {
         transition: none;
     }
 
+  
+/* =========================================================
+   SOCIAL LINKS
+========================================================= */
+
+.contact-social {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-social-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link span {
+    color: var(--accent-dark, #6d8f00);
+}
+
+.social-link:hover {
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+
+/* =========================================================
+   SOCIAL ACCESSIBILITY
+========================================================= */
+
+.social-link:focus-visible,
+.footer-links a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+
+/* =========================================================
+   MOBILE SOCIAL LINKS
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .contact-social {
+        margin-top: 20px;
+    }
+
+    .footer-links {
+        gap: 16px;
+        margin-top: 8px;
+    }
+
+}
+
+
+
 }
 
