@@ -1,9 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /*
-    ==========================================
+    ==========================================================
+    KAMOHELO MAKHALEMELE PORTFOLIO
+    MAIN JAVASCRIPT
+    ==========================================================
+    */
+
+
+    /*
+    ==========================================================
     MOBILE NAVIGATION
-    ==========================================
+    ==========================================================
     */
 
     const menuToggle =
@@ -13,115 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".nav");
 
 
-    /*
-    ------------------------------------------
-    OPEN / CLOSE MOBILE MENU
-    ------------------------------------------
-    */
-
-    menuToggle?.addEventListener("click", () => {
+    function closeMobileMenu() {
 
         if (!nav) return;
-
-        const isOpen =
-            nav.classList.toggle("open");
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            isOpen.toString()
-        );
-
-        /*
-        Prevent background scrolling while
-        the mobile menu is open.
-        */
-
-        document.body.classList.toggle(
-            "menu-open",
-            isOpen
-        );
-
-    });
-
-
-    /*
-    ------------------------------------------
-    CLOSE MENU WHEN NAV LINK IS CLICKED
-    ------------------------------------------
-    */
-
-    document.querySelectorAll(".nav a").forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            nav?.classList.remove("open");
-
-            menuToggle?.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            document.body.classList.remove(
-                "menu-open"
-            );
-
-        });
-
-    });
-
-
-    /*
-    ------------------------------------------
-    CLOSE MENU WHEN CLICKING OUTSIDE
-    ------------------------------------------
-    */
-
-    document.addEventListener("click", event => {
-
-        if (!nav || !menuToggle) return;
-
-        const clickedInsideNav =
-            nav.contains(event.target);
-
-        const clickedMenuButton =
-            menuToggle.contains(event.target);
-
-
-        if (
-            nav.classList.contains("open") &&
-            !clickedInsideNav &&
-            !clickedMenuButton
-        ) {
-
-            nav.classList.remove("open");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            document.body.classList.remove(
-                "menu-open"
-            );
-
-        }
-
-    });
-
-
-    /*
-    ------------------------------------------
-    CLOSE MENU WITH ESCAPE
-    ------------------------------------------
-    */
-
-    document.addEventListener("keydown", event => {
-
-        if (event.key !== "Escape") return;
-
-        if (!nav?.classList.contains("open")) {
-            return;
-        }
 
         nav.classList.remove("open");
 
@@ -130,31 +32,196 @@ document.addEventListener("DOMContentLoaded", () => {
             "false"
         );
 
+        menuToggle?.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
+
         document.body.classList.remove(
             "menu-open"
         );
 
-        menuToggle?.focus();
+    }
 
-    });
+
+    function openMobileMenu() {
+
+        if (!nav) return;
+
+        nav.classList.add("open");
+
+        menuToggle?.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        menuToggle?.setAttribute(
+            "aria-label",
+            "Close navigation menu"
+        );
+
+        document.body.classList.add(
+            "menu-open"
+        );
+
+    }
 
 
     /*
-    ==========================================
+    ----------------------------------------------------------
+    OPEN / CLOSE MENU
+    ----------------------------------------------------------
+    */
+
+    menuToggle?.addEventListener(
+        "click",
+        event => {
+
+            event.stopPropagation();
+
+            const isOpen =
+                nav?.classList.contains("open");
+
+            if (isOpen) {
+
+                closeMobileMenu();
+
+            } else {
+
+                openMobileMenu();
+
+            }
+
+        }
+    );
+
+
+    /*
+    ----------------------------------------------------------
+    CLOSE WHEN NAVIGATION LINK IS CLICKED
+    ----------------------------------------------------------
+    */
+
+    document
+        .querySelectorAll(".nav a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    closeMobileMenu();
+
+                }
+            );
+
+        });
+
+
+    /*
+    ----------------------------------------------------------
+    CLOSE WHEN CLICKING OUTSIDE
+    ----------------------------------------------------------
+    */
+
+    document.addEventListener(
+        "click",
+        event => {
+
+            if (!nav || !menuToggle) {
+                return;
+            }
+
+
+            if (!nav.classList.contains("open")) {
+                return;
+            }
+
+
+            const clickedInsideNav =
+                nav.contains(event.target);
+
+            const clickedMenuButton =
+                menuToggle.contains(event.target);
+
+
+            if (
+                !clickedInsideNav &&
+                !clickedMenuButton
+            ) {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+
+    /*
+    ----------------------------------------------------------
+    CLOSE WITH ESCAPE
+    ----------------------------------------------------------
+    */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (event.key !== "Escape") {
+                return;
+            }
+
+
+            if (!nav?.classList.contains("open")) {
+                return;
+            }
+
+
+            closeMobileMenu();
+
+            menuToggle?.focus();
+
+        }
+    );
+
+
+    /*
+    ----------------------------------------------------------
+    CLOSE MOBILE MENU WHEN SCREEN BECOMES DESKTOP
+    ----------------------------------------------------------
+    */
+
+    const desktopMediaQuery =
+        window.matchMedia("(min-width: 861px)");
+
+
+    function handleDesktopResize() {
+
+        if (desktopMediaQuery.matches) {
+
+            closeMobileMenu();
+
+        }
+
+    }
+
+
+    desktopMediaQuery.addEventListener?.(
+        "change",
+        handleDesktopResize
+    );
+
+
+    /*
+    ==========================================================
     CURSOR GLOW
-    ==========================================
+    ==========================================================
     */
 
     const cursorGlow =
         document.querySelector(".cursor-glow");
 
-
-    /*
-    Only run cursor effect on devices
-    that actually have a mouse pointer.
-    This prevents unnecessary processing
-    on phones and tablets.
-    */
 
     const hasFinePointer =
         window.matchMedia(
@@ -162,32 +229,71 @@ document.addEventListener("DOMContentLoaded", () => {
         ).matches;
 
 
-    if (cursorGlow && hasFinePointer) {
+    if (
+        cursorGlow &&
+        hasFinePointer
+    ) {
 
-        window.addEventListener("mousemove", event => {
+        let mouseX = 0;
+        let mouseY = 0;
 
-            cursorGlow.style.left =
-                `${event.clientX}px`;
+        let glowX = 0;
+        let glowY = 0;
 
-            cursorGlow.style.top =
-                `${event.clientY}px`;
 
-        });
+        window.addEventListener(
+            "mousemove",
+            event => {
+
+                mouseX = event.clientX;
+                mouseY = event.clientY;
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        function animateCursorGlow() {
+
+            glowX +=
+                (mouseX - glowX) * 0.12;
+
+            glowY +=
+                (mouseY - glowY) * 0.12;
+
+
+            cursorGlow.style.transform =
+                `translate3d(${glowX}px, ${glowY}px, 0)`;
+
+
+            requestAnimationFrame(
+                animateCursorGlow
+            );
+
+        }
+
+
+        animateCursorGlow();
 
     }
 
 
     /*
-    ==========================================
+    ==========================================================
     SCROLL REVEAL ANIMATIONS
-    ==========================================
+    ==========================================================
     */
 
     const revealElements =
         document.querySelectorAll(".reveal");
 
 
-    if ("IntersectionObserver" in window) {
+    if (
+        "IntersectionObserver" in window &&
+        revealElements.length
+    ) {
 
         const revealObserver =
             new IntersectionObserver(
@@ -195,13 +301,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     entries.forEach(entry => {
 
-                        if (!entry.isIntersecting) {
+                        if (
+                            !entry.isIntersecting
+                        ) {
+
                             return;
+
                         }
+
 
                         entry.target.classList.add(
                             "visible"
                         );
+
 
                         revealObserver.unobserve(
                             entry.target
@@ -211,66 +323,184 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 },
                 {
-                    threshold: 0.12
+                    threshold: 0.12,
+                    rootMargin: "0px 0px -40px 0px"
                 }
             );
 
 
-        revealElements.forEach(element => {
+        revealElements.forEach(
+            element => {
 
-            revealObserver.observe(element);
+                revealObserver.observe(
+                    element
+                );
 
-        });
+            }
+        );
 
     } else {
 
-        /*
-        ------------------------------------------
-        FALLBACK FOR OLDER BROWSERS
-        ------------------------------------------
-        */
+        revealElements.forEach(
+            element => {
 
-        revealElements.forEach(element => {
+                element.classList.add(
+                    "visible"
+                );
 
-            element.classList.add("visible");
-
-        });
+            }
+        );
 
     }
 
 
     /*
-    ==========================================
-    CONTACT FORM — GMAIL
-    ==========================================
+    ==========================================================
+    SMOOTH ANCHOR SCROLLING
+    ==========================================================
+    */
 
-    The form collects:
-    - Name
-    - Email
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(link => {
 
-    Visitors can enter an email address from
-    any provider, including:
+            link.addEventListener(
+                "click",
+                event => {
 
-    - Gmail
-    - Outlook
-    - iCloud
-    - Yahoo
-    - Company email
+                    const targetId =
+                        link.getAttribute("href");
 
-    The submitted enquiry is prepared inside
-    Gmail and the visitor can review it before
-    manually clicking Send.
 
-    No EmailJS.
-    No mailto.
-    ==========================================
+                    if (
+                        !targetId ||
+                        targetId === "#"
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    const target =
+                        document.querySelector(
+                            targetId
+                        );
+
+
+                    if (!target) {
+                        return;
+                    }
+
+
+                    event.preventDefault();
+
+
+                    const header =
+                        document.querySelector(
+                            ".site-header"
+                        );
+
+
+                    const headerHeight =
+                        header
+                            ? header.offsetHeight
+                            : 0;
+
+
+                    const targetPosition =
+                        target.getBoundingClientRect().top +
+                        window.scrollY -
+                        headerHeight -
+                        20;
+
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: "smooth"
+                    });
+
+
+                    /*
+                    Update URL without jumping.
+                    */
+
+                    history.pushState(
+                        null,
+                        "",
+                        targetId
+                    );
+
+                }
+            );
+
+        });
+
+
+    /*
+    ==========================================================
+    HEADER SCROLL STATE
+    ==========================================================
+    */
+
+    const header =
+        document.querySelector(
+            ".site-header"
+        );
+
+
+    function updateHeader() {
+
+        if (!header) {
+            return;
+        }
+
+
+        if (window.scrollY > 30) {
+
+            header.classList.add(
+                "scrolled"
+            );
+
+        } else {
+
+            header.classList.remove(
+                "scrolled"
+            );
+
+        }
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        updateHeader,
+        {
+            passive: true
+        }
+    );
+
+
+    updateHeader();
+
+
+    /*
+    ==========================================================
+    CONTACT FORM
+    ==========================================================
     */
 
     const contactForm =
-        document.getElementById("contactForm");
+        document.getElementById(
+            "contactForm"
+        );
+
 
     const formPopup =
-        document.getElementById("formPopup");
+        document.getElementById(
+            "formPopup"
+        );
 
 
     if (contactForm) {
@@ -283,15 +513,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 /*
-                ------------------------------------------
+                ------------------------------------------------
                 GET FORM VALUES
-                ------------------------------------------
+                ------------------------------------------------
                 */
 
                 const nameInput =
                     contactForm.querySelector(
                         '[name="name"]'
                     );
+
 
                 const emailInput =
                     contactForm.querySelector(
@@ -302,55 +533,39 @@ document.addEventListener("DOMContentLoaded", () => {
                 const name =
                     nameInput?.value.trim() || "";
 
+
                 const email =
                     emailInput?.value.trim() || "";
 
 
                 /*
-                ------------------------------------------
+                ------------------------------------------------
                 VALIDATION
-                ------------------------------------------
+                ------------------------------------------------
                 */
 
-                if (!name || !email) {
+                if (!name) {
 
                     showFormPopup(
-                        "Please enter your name and email address.",
+                        "Please enter your name.",
                         true
                     );
 
 
-                    if (!name) {
-
-                        nameInput?.focus();
-
-                    } else {
-
-                        emailInput?.focus();
-
-                    }
+                    nameInput?.focus();
 
                     return;
 
                 }
 
 
-                /*
-                ------------------------------------------
-                BASIC EMAIL VALIDATION
-                ------------------------------------------
-                */
-
-                const emailPattern =
-                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-                if (!emailPattern.test(email)) {
+                if (!email) {
 
                     showFormPopup(
-                        "Please enter a valid email address.",
+                        "Please enter your email address.",
                         true
                     );
+
 
                     emailInput?.focus();
 
@@ -360,9 +575,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 /*
-                ------------------------------------------
+                ------------------------------------------------
+                EMAIL VALIDATION
+                ------------------------------------------------
+                */
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+                if (
+                    !emailPattern.test(
+                        email
+                    )
+                ) {
+
+                    showFormPopup(
+                        "Please enter a valid email address.",
+                        true
+                    );
+
+
+                    emailInput?.focus();
+
+                    return;
+
+                }
+
+
+                /*
+                ------------------------------------------------
                 RECEIVING EMAIL
-                ------------------------------------------
+                ------------------------------------------------
                 */
 
                 const recipient =
@@ -370,9 +614,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 /*
-                ------------------------------------------
-                GMAIL SUBJECT
-                ------------------------------------------
+                ------------------------------------------------
+                SUBJECT
+                ------------------------------------------------
                 */
 
                 const subject =
@@ -380,9 +624,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 /*
-                ------------------------------------------
-                PROFESSIONAL EMAIL BODY
-                ------------------------------------------
+                ------------------------------------------------
+                EMAIL BODY
+                ------------------------------------------------
                 */
 
                 const body =
@@ -402,22 +646,22 @@ ${name}`;
 
 
                 /*
-                ------------------------------------------
-                CREATE GMAIL COMPOSE URL
-                ------------------------------------------
+                ------------------------------------------------
+                GMAIL COMPOSE URL
+                ------------------------------------------------
                 */
 
                 const gmailUrl =
-                    `https://mail.google.com/mail/?view=cm&fs=1` +
+                    "https://mail.google.com/mail/?view=cm&fs=1" +
                     `&to=${encodeURIComponent(recipient)}` +
                     `&su=${encodeURIComponent(subject)}` +
                     `&body=${encodeURIComponent(body)}`;
 
 
                 /*
-                ------------------------------------------
-                SHOW SUCCESS MESSAGE
-                ------------------------------------------
+                ------------------------------------------------
+                SUCCESS MESSAGE
+                ------------------------------------------------
                 */
 
                 showFormPopup(
@@ -426,12 +670,14 @@ ${name}`;
 
 
                 /*
-                ------------------------------------------
+                ------------------------------------------------
                 CONFETTI
-                ------------------------------------------
+                ------------------------------------------------
                 */
 
-                if (typeof confetti === "function") {
+                if (
+                    typeof confetti === "function"
+                ) {
 
                     confetti({
                         particleCount: 80,
@@ -445,9 +691,9 @@ ${name}`;
 
 
                 /*
-                ------------------------------------------
+                ------------------------------------------------
                 OPEN GMAIL
-                ------------------------------------------
+                ------------------------------------------------
                 */
 
                 const gmailWindow =
@@ -459,13 +705,9 @@ ${name}`;
 
 
                 /*
-                ------------------------------------------
+                ------------------------------------------------
                 FALLBACK
-                ------------------------------------------
-
-                If the browser blocks the new tab,
-                navigate the current page to Gmail.
-                ------------------------------------------
+                ------------------------------------------------
                 */
 
                 if (!gmailWindow) {
@@ -479,16 +721,19 @@ ${name}`;
 
 
                 /*
-                ------------------------------------------
+                ------------------------------------------------
                 RESET FORM
-                ------------------------------------------
+                ------------------------------------------------
                 */
 
-                setTimeout(() => {
+                setTimeout(
+                    () => {
 
-                    contactForm.reset();
+                        contactForm.reset();
 
-                }, 1000);
+                    },
+                    1000
+                );
 
             }
         );
@@ -497,9 +742,9 @@ ${name}`;
 
 
     /*
-    ==========================================
+    ==========================================================
     FORM POPUP
-    ==========================================
+    ==========================================================
     */
 
     function showFormPopup(
@@ -507,7 +752,9 @@ ${name}`;
         isError = false
     ) {
 
-        if (!formPopup) return;
+        if (!formPopup) {
+            return;
+        }
 
 
         formPopup.textContent =
@@ -525,19 +772,16 @@ ${name}`;
         );
 
 
-        /*
-        Support the existing CSS.
-        */
-
         formPopup.style.display =
             "block";
+
 
         formPopup.style.opacity =
             "1";
 
 
         /*
-        Clear an existing hide timer.
+        Clear previous timer.
         */
 
         clearTimeout(
@@ -546,79 +790,156 @@ ${name}`;
 
 
         /*
-        Hide the notification after 4 seconds.
+        Hide after four seconds.
         */
 
         formPopup.hideTimer =
-            setTimeout(() => {
+            setTimeout(
+                () => {
 
-                formPopup.classList.remove(
-                    "show"
-                );
-
-                formPopup.style.opacity =
-                    "0";
+                    formPopup.classList.remove(
+                        "show"
+                    );
 
 
-                setTimeout(() => {
+                    formPopup.style.opacity =
+                        "0";
 
-                    formPopup.style.display =
-                        "none";
 
-                }, 300);
+                    setTimeout(
+                        () => {
 
-            }, 4000);
+                            formPopup.style.display =
+                                "none";
+
+                        },
+                        300
+                    );
+
+                },
+                4000
+            );
 
     }
 
+
+    /*
+    ==========================================================
+    REDUCE MOTION SUPPORT
+    ==========================================================
+    */
+
+    const reducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+
+    if (reducedMotion) {
+
+        document.documentElement.classList.add(
+            "reduced-motion"
+        );
+
+    }
+
+
+    /*
+    ==========================================================
+    KEYBOARD ACCESSIBILITY
+    ==========================================================
+    */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            /*
+            Close menu if user presses Tab
+            while focus moves outside it.
+            */
+
+            if (
+                event.key === "Tab" &&
+                nav?.classList.contains("open")
+            ) {
+
+                const focusableElements =
+                    nav.querySelectorAll(
+                        "a, button, input, [tabindex]:not([tabindex='-1'])"
+                    );
+
+
+                if (!focusableElements.length) {
+                    return;
+                }
+
+            }
+
+        }
+    );
+
+
+    /*
+    ==========================================================
+    PROGRESSIVE WEB APP
+    ==========================================================
+    */
+
+    if (
+        "serviceWorker" in navigator
+    ) {
+
+        window.addEventListener(
+            "load",
+            () => {
+
+                navigator.serviceWorker
+                    .register(
+                        "./service-worker.js"
+                    )
+                    .then(
+                        registration => {
+
+                            console.log(
+                                "Kamohelo Portfolio app is ready.",
+                                registration.scope
+                            );
+
+
+                            /*
+                            Check for updates.
+                            */
+
+                            registration.update();
+
+                        }
+                    )
+                    .catch(
+                        error => {
+
+                            console.error(
+                                "Portfolio app service worker registration failed:",
+                                error
+                            );
+
+                        }
+                    );
+
+            }
+        );
+
+    }
+
+
+    /*
+    ==========================================================
+    PAGE READY
+    ==========================================================
+    */
+
+    document.body.classList.add(
+        "page-ready"
+    );
+
 });
-
-
-/*
-==========================================
-PROGRESSIVE WEB APP
-==========================================
-
-Registers the service worker that allows
-the portfolio to behave like an app when
-installed on a phone.
-
-This does NOT change the website design.
-
-==========================================
-*/
-
-if ("serviceWorker" in navigator) {
-
-    window.addEventListener("load", () => {
-
-        navigator.serviceWorker
-            .register("./service-worker.js")
-            .then(registration => {
-
-                console.log(
-                    "Kamohelo Portfolio app is ready.",
-                    registration.scope
-                );
-
-
-                /*
-                Check for a newer version of
-                the service worker.
-                */
-
-                registration.update();
-
-            })
-            .catch(error => {
-
-                console.error(
-                    "Portfolio app service worker registration failed:",
-                    error
-                );
-
-            });
-
-    });
-
-}
