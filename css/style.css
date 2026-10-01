@@ -1,4 +1,3 @@
-
 /* =========================================================
    ROOT / VARIABLES
 ========================================================= */
@@ -17,6 +16,11 @@
     --accent-dark: #6d8f00;
 
     --dark: #1d2421;
+
+    /* LinkedIn brand colour */
+    --linkedin: #0a66c2;
+    --linkedin-dark: #004182;
+    --linkedin-soft: rgba(10, 102, 194, 0.1);
 
     --serif: Georgia, "Times New Roman", serif;
     --mono: "DM Mono", monospace;
@@ -290,13 +294,6 @@ body:hover .cursor-glow {
 }
 
 
-/*
-    IMPORTANT:
-    JS changes aria-expanded rather than adding
-    an .active class, so the selectors below
-    match the JavaScript correctly.
-*/
-
 .menu-toggle[aria-expanded="true"] span:first-child {
     transform: translateY(7px) rotate(45deg);
 }
@@ -471,6 +468,10 @@ h1 {
 .hero-actions {
     display: flex;
 
+    align-items: center;
+
+    flex-wrap: wrap;
+
     gap: 12px;
 
     margin-top: 36px;
@@ -481,6 +482,7 @@ h1 {
     display: inline-flex;
 
     align-items: center;
+    justify-content: center;
 
     gap: 25px;
 
@@ -496,7 +498,8 @@ h1 {
         transform 0.25s ease,
         background 0.25s ease,
         color 0.25s ease,
-        border-color 0.25s ease;
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 
@@ -526,6 +529,70 @@ h1 {
 
 .button-ghost:hover {
     border-color: var(--ink);
+}
+
+
+/* =========================================================
+   LINKEDIN BRAND BUTTON
+========================================================= */
+
+.button-linkedin {
+    gap: 10px;
+
+    background: var(--linkedin);
+
+    color: #ffffff;
+
+    border: 1px solid var(--linkedin);
+}
+
+
+.button-linkedin:hover {
+    background: var(--linkedin-dark);
+
+    color: #ffffff;
+
+    border-color: var(--linkedin-dark);
+
+    box-shadow:
+        0 8px 20px rgba(10, 102, 194, 0.18);
+}
+
+
+.button-linkedin .linkedin-icon {
+    width: 15px;
+    height: 15px;
+
+    fill: currentColor;
+
+    flex-shrink: 0;
+}
+
+
+.button-linkedin > span:last-child {
+    color: #ffffff;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.button-linkedin:hover > span:last-child {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   LINKEDIN ICON
+========================================================= */
+
+.linkedin-icon {
+    width: 20px;
+    height: 20px;
+
+    display: block;
+
+    fill: currentColor;
 }
 
 
@@ -1358,6 +1425,142 @@ h1 {
 }
 
 
+/* =========================================================
+   CONTACT LINKEDIN
+========================================================= */
+
+.contact-social {
+    margin-top: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.contact-social-label {
+    color: var(--muted);
+
+    font: 500 10px var(--mono);
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+
+.social-link.linkedin-profile {
+    width: min(100%, 420px);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px 16px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    border: 1px solid var(--line);
+
+    border-radius: 14px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.social-link.linkedin-profile:hover {
+    transform: translateY(-3px);
+
+    background: #ffffff;
+
+    border-color: rgba(10, 102, 194, 0.35);
+
+    box-shadow:
+        0 10px 25px rgba(29, 36, 33, 0.08);
+}
+
+
+.linkedin-icon-box {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--linkedin);
+
+    color: #ffffff;
+
+    border-radius: 8px;
+}
+
+
+.linkedin-icon-box .linkedin-icon {
+    width: 20px;
+    height: 20px;
+
+    fill: currentColor;
+}
+
+
+.linkedin-text {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.linkedin-text strong {
+    color: var(--ink);
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.linkedin-text small {
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+.linkedin-arrow {
+    margin-left: auto;
+
+    color: var(--linkedin);
+
+    font-size: 18px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.social-link.linkedin-profile:hover .linkedin-arrow {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   CONTACT PANEL
+========================================================= */
+
 .contact-panel {
     min-height: 280px;
 
@@ -1696,17 +1899,76 @@ h1 {
 }
 
 
-.site-footer a {
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
+.footer-links {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 24px;
+
+    flex-wrap: wrap;
 }
 
 
-.site-footer a:hover {
+.footer-links a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.footer-links a:hover {
     color: var(--ink);
 
     transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER LINKEDIN
+========================================================= */
+
+.footer-linkedin {
+    color: var(--linkedin) !important;
+}
+
+
+.footer-linkedin .linkedin-icon {
+    width: 15px;
+    height: 15px;
+
+    fill: currentColor;
+}
+
+
+.footer-linkedin:hover {
+    color: var(--linkedin-dark) !important;
+}
+
+
+/* =========================================================
+   SOCIAL ACCESSIBILITY
+========================================================= */
+
+.social-link:focus-visible,
+.footer-links a:focus-visible,
+.button-linkedin:focus-visible {
+    outline: 3px solid var(--accent);
+
+    outline-offset: 4px;
+
+    border-radius: 6px;
 }
 
 
@@ -1954,15 +2216,6 @@ h1 {
    REVEAL ANIMATIONS
 ========================================================= */
 
-/*
-   IMPORTANT:
-
-   Elements remain visible by default so that the website
-   does not appear blank if JavaScript is delayed or fails.
-
-   When JavaScript adds .visible, the reveal animation runs.
-*/
-
 .reveal {
     opacity: 1;
 
@@ -2007,11 +2260,6 @@ h1 {
 
 /* =========================================================
    RESPONSIVE RULES
-========================================================= */
-
-
-/* =========================================================
-   TABLET / SMALL LAPTOP
 ========================================================= */
 
 @media (max-width: 1100px) {
@@ -2258,10 +2506,6 @@ h1 {
     }
 
 
-    /* ---------------------------------------------
-       MOBILE NAVIGATION
-    --------------------------------------------- */
-
     .nav {
         top: 68px;
     }
@@ -2314,6 +2558,11 @@ h1 {
         width: 100%;
 
         justify-content: space-between;
+    }
+
+
+    .button-linkedin {
+        justify-content: center;
     }
 
 
@@ -2594,6 +2843,24 @@ h1 {
     }
 
 
+    .social-link.linkedin-profile {
+        width: 100%;
+
+        padding: 13px 14px;
+    }
+
+
+    .linkedin-icon-box {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .linkedin-text small {
+        font-size: 10px;
+    }
+
+
     #formPopup {
         top: 16px;
 
@@ -2686,6 +2953,13 @@ h1 {
         overflow-wrap: break-word;
     }
 
+
+    .footer-links {
+        gap: 16px;
+
+        margin-top: 8px;
+    }
+
 }
 
 
@@ -2765,6 +3039,11 @@ h1 {
 
     .contact-copy h2 {
         font-size: 40px;
+    }
+
+
+    .linkedin-text small {
+        display: none;
     }
 
 }
@@ -2854,103 +3133,10 @@ h1 {
     .capability-card,
     .project-card,
     .contact-submit,
-    .menu-toggle span {
+    .menu-toggle span,
+    .social-link,
+    .linkedin-arrow {
         transition: none;
     }
 
-  
-/* =========================================================
-   SOCIAL LINKS
-========================================================= */
-
-.contact-social {
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
 }
-
-.contact-social-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    color: var(--muted);
-}
-
-.social-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    width: fit-content;
-    color: var(--dark);
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-link span {
-    color: var(--accent-dark, #6d8f00);
-}
-
-.social-link:hover {
-    color: var(--accent);
-    transform: translateX(4px);
-}
-
-
-/* =========================================================
-   FOOTER LINKS
-========================================================= */
-
-.footer-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: var(--accent);
-}
-
-
-/* =========================================================
-   SOCIAL ACCESSIBILITY
-========================================================= */
-
-.social-link:focus-visible,
-.footer-links a:focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 4px;
-    border-radius: 4px;
-}
-
-
-/* =========================================================
-   MOBILE SOCIAL LINKS
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .contact-social {
-        margin-top: 20px;
-    }
-
-    .footer-links {
-        gap: 16px;
-        margin-top: 8px;
-    }
-
-}
-
-
-
-}
-
