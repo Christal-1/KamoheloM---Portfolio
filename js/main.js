@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
     CONTACT FORM — GMAIL
     ==========================================
 
-    The form collects the visitor's:
+    The form collects:
     - Name
     - Email
 
@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 /*
                 ------------------------------------------
-                YOUR RECEIVING EMAIL
+                RECEIVING EMAIL
                 ------------------------------------------
                 */
 
@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 I hope you're doing well.
 
-My name is ${name}, and I came across your portfolio. I’d like to connect with you and learn more about your work and opportunities to collaborate.
+My name is ${name}, and I came across your portfolio. I'd like to connect with you and learn more about your work and opportunities to collaborate.
 
 You can reach me at ${email}.
 
