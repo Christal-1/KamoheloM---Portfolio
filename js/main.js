@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".nav");
 
 
+    /*
+    ------------------------------------------
+    OPEN / CLOSE MOBILE MENU
+    ------------------------------------------
+    */
+
     menuToggle?.addEventListener("click", () => {
 
         if (!nav) return;
@@ -25,8 +31,24 @@ document.addEventListener("DOMContentLoaded", () => {
             isOpen.toString()
         );
 
+        /*
+        Prevent background scrolling while
+        the mobile menu is open.
+        */
+
+        document.body.classList.toggle(
+            "menu-open",
+            isOpen
+        );
+
     });
 
+
+    /*
+    ------------------------------------------
+    CLOSE MENU WHEN NAV LINK IS CLICKED
+    ------------------------------------------
+    */
 
     document.querySelectorAll(".nav a").forEach(link => {
 
@@ -39,7 +61,80 @@ document.addEventListener("DOMContentLoaded", () => {
                 "false"
             );
 
+            document.body.classList.remove(
+                "menu-open"
+            );
+
         });
+
+    });
+
+
+    /*
+    ------------------------------------------
+    CLOSE MENU WHEN CLICKING OUTSIDE
+    ------------------------------------------
+    */
+
+    document.addEventListener("click", event => {
+
+        if (!nav || !menuToggle) return;
+
+        const clickedInsideNav =
+            nav.contains(event.target);
+
+        const clickedMenuButton =
+            menuToggle.contains(event.target);
+
+
+        if (
+            nav.classList.contains("open") &&
+            !clickedInsideNav &&
+            !clickedMenuButton
+        ) {
+
+            nav.classList.remove("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            document.body.classList.remove(
+                "menu-open"
+            );
+
+        }
+
+    });
+
+
+    /*
+    ------------------------------------------
+    CLOSE MENU WITH ESCAPE
+    ------------------------------------------
+    */
+
+    document.addEventListener("keydown", event => {
+
+        if (event.key !== "Escape") return;
+
+        if (!nav?.classList.contains("open")) {
+            return;
+        }
+
+        nav.classList.remove("open");
+
+        menuToggle?.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        document.body.classList.remove(
+            "menu-open"
+        );
+
+        menuToggle?.focus();
 
     });
 
@@ -54,17 +149,32 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".cursor-glow");
 
 
-    window.addEventListener("mousemove", event => {
+    /*
+    Only run cursor effect on devices
+    that actually have a mouse pointer.
+    This prevents unnecessary processing
+    on phones and tablets.
+    */
 
-        if (!cursorGlow) return;
+    const hasFinePointer =
+        window.matchMedia(
+            "(hover: hover) and (pointer: fine)"
+        ).matches;
 
-        cursorGlow.style.left =
-            `${event.clientX}px`;
 
-        cursorGlow.style.top =
-            `${event.clientY}px`;
+    if (cursorGlow && hasFinePointer) {
 
-    });
+        window.addEventListener("mousemove", event => {
+
+            cursorGlow.style.left =
+                `${event.clientX}px`;
+
+            cursorGlow.style.top =
+                `${event.clientY}px`;
+
+        });
+
+    }
 
 
     /*
@@ -115,7 +225,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
 
         /*
-        Fallback for older browsers
+        ------------------------------------------
+        FALLBACK FOR OLDER BROWSERS
+        ------------------------------------------
         */
 
         revealElements.forEach(element => {
@@ -136,14 +248,18 @@ document.addEventListener("DOMContentLoaded", () => {
     - Name
     - Email
 
-    The visitor can use any email provider:
-    Gmail, Outlook, iCloud, Yahoo, company email, etc.
+    Visitors can enter an email address from
+    any provider, including:
 
-    Clicking "Send Message" opens Gmail with
-    the enquiry already prepared.
+    - Gmail
+    - Outlook
+    - iCloud
+    - Yahoo
+    - Company email
 
-    The visitor reviews the email and clicks
-    Send from their own Gmail account.
+    The submitted enquiry is prepared inside
+    Gmail and the visitor can review it before
+    manually clicking Send.
 
     No EmailJS.
     No mailto.
@@ -203,6 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         true
                     );
 
+
                     if (!name) {
 
                         nameInput?.focus();
@@ -260,6 +377,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const subject =
                     `Portfolio Enquiry — ${name}`;
+
 
                 /*
                 ------------------------------------------
@@ -418,10 +536,18 @@ ${name}`;
             "1";
 
 
+        /*
+        Clear an existing hide timer.
+        */
+
         clearTimeout(
             formPopup.hideTimer
         );
 
+
+        /*
+        Hide the notification after 4 seconds.
+        */
 
         formPopup.hideTimer =
             setTimeout(() => {
@@ -446,3 +572,53 @@ ${name}`;
     }
 
 });
+
+
+/*
+==========================================
+PROGRESSIVE WEB APP
+==========================================
+
+Registers the service worker that allows
+the portfolio to behave like an app when
+installed on a phone.
+
+This does NOT change the website design.
+
+==========================================
+*/
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", () => {
+
+        navigator.serviceWorker
+            .register("./service-worker.js")
+            .then(registration => {
+
+                console.log(
+                    "Kamohelo Portfolio app is ready.",
+                    registration.scope
+                );
+
+
+                /*
+                Check for a newer version of
+                the service worker.
+                */
+
+                registration.update();
+
+            })
+            .catch(error => {
+
+                console.error(
+                    "Portfolio app service worker registration failed:",
+                    error
+                );
+
+            });
+
+    });
+
+}
