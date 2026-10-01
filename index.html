@@ -10,8 +10,14 @@
         content="A modern portfolio for a customer strategy, digital sales and marketing professional."
     >
 
+    <meta name="theme-color" content="#0b0b0b">
+
     <title>Kamohelo M. | Strategy • Marketing • Growth</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -20,6 +26,7 @@
         rel="stylesheet"
     >
 
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -27,6 +34,7 @@
 
     <!-- Cursor effect -->
     <div class="cursor-glow" aria-hidden="true"></div>
+
 
     <!-- =====================================================
          HEADER
@@ -53,6 +61,7 @@
             class="menu-toggle"
             aria-label="Toggle navigation menu"
             aria-expanded="false"
+            aria-controls="main-navigation"
             type="button"
         >
             <span></span>
@@ -60,9 +69,15 @@
         </button>
 
 
-        <nav class="nav" aria-label="Main navigation">
+        <nav
+            class="nav"
+            id="main-navigation"
+            aria-label="Main navigation"
+        >
 
-            <a href="#about">About</a>
+            <a href="#about">
+                About
+            </a>
 
             <a href="#capabilities">
                 Capabilities
@@ -80,12 +95,14 @@
                 href="#contact"
                 class="nav-cta"
             >
-                Let's connect <span>↗</span>
+                Let's connect
+                <span>↗</span>
             </a>
 
         </nav>
 
     </header>
+
 
 
     <!-- =====================================================
@@ -384,7 +401,6 @@
 
             <div class="capability-grid">
 
-
                 <article class="capability-card reveal">
 
                     <div class="card-number">
@@ -408,20 +424,15 @@
                     </p>
 
                     <div class="card-tags">
-
                         <span>INSIGHT</span>
                         <span>EXPERIENCE</span>
                         <span>SEGMENTATION</span>
-
                     </div>
 
                 </article>
 
 
-
-                <article
-                    class="capability-card featured reveal delay-1"
-                >
+                <article class="capability-card featured reveal delay-1">
 
                     <div class="card-number">
                         02
@@ -444,15 +455,12 @@
                     </p>
 
                     <div class="card-tags">
-
                         <span>BRAND</span>
                         <span>CONTENT</span>
                         <span>CAMPAIGNS</span>
-
                     </div>
 
                 </article>
-
 
 
                 <article class="capability-card reveal delay-2">
@@ -478,11 +486,9 @@
                     </p>
 
                     <div class="card-tags">
-
                         <span>GROWTH</span>
                         <span>SALES</span>
                         <span>STRATEGY</span>
-
                     </div>
 
                 </article>
@@ -594,11 +600,9 @@
 
 
                     <div class="project-tags">
-
                         <span>RESEARCH</span>
                         <span>POSITIONING</span>
                         <span>BRAND STRATEGY</span>
-
                     </div>
 
                 </article>
@@ -655,11 +659,9 @@
                         <div class="project-visual campaign-visual">
 
                             <div class="funnel">
-
                                 <span>ATTENTION</span>
                                 <span>INTEREST</span>
                                 <span>ACTION</span>
-
                             </div>
 
                         </div>
@@ -668,11 +670,9 @@
 
 
                     <div class="project-tags">
-
                         <span>CAMPAIGN</span>
                         <span>CONTENT</span>
                         <span>CONVERSION</span>
-
                     </div>
 
                 </article>
@@ -754,11 +754,9 @@
 
 
                     <div class="project-tags">
-
                         <span>ANALYTICS</span>
                         <span>KPIs</span>
                         <span>INSIGHT</span>
-
                     </div>
 
                 </article>
@@ -944,15 +942,14 @@
 
 
 
-            <!-- CONTACT FORM
-                 Kept compatible with your existing JS.
-            -->
+            <!-- CONTACT FORM -->
 
             <form
                 id="contactForm"
                 class="contact-form reveal"
                 action="#"
                 method="post"
+                novalidate
             >
 
                 <input
@@ -1017,5 +1014,10 @@
 
     </footer>
 
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+
 </body>
+
 </html>
