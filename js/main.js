@@ -135,15 +135,18 @@ document.addEventListener("DOMContentLoaded", () => {
     The form collects:
     - Name
     - Email
+    - Optional Message
 
-    Clicking "Send Message" opens Gmail
-    with a professional email already prepared.
+    The visitor can use any email provider:
+    Gmail, Outlook, iCloud, Yahoo, company email, etc.
 
-    The visitor can review the email and
-    manually click Send.
+    Clicking "Send Message" opens Gmail with
+    the enquiry already prepared.
+
+    The visitor reviews the email and clicks
+    Send from their own Gmail account.
 
     No EmailJS.
-    No Outlook.
     No mailto.
     ==========================================
     */
@@ -180,12 +183,20 @@ document.addEventListener("DOMContentLoaded", () => {
                         '[name="email"]'
                     );
 
+                const messageInput =
+                    contactForm.querySelector(
+                        '[name="message"]'
+                    );
+
 
                 const name =
                     nameInput?.value.trim() || "";
 
                 const email =
                     emailInput?.value.trim() || "";
+
+                const message =
+                    messageInput?.value.trim() || "";
 
 
                 /*
@@ -200,6 +211,16 @@ document.addEventListener("DOMContentLoaded", () => {
                         "Please enter your name and email address.",
                         true
                     );
+
+                    if (!name) {
+
+                        nameInput?.focus();
+
+                    } else {
+
+                        emailInput?.focus();
+
+                    }
 
                     return;
 
@@ -252,6 +273,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 /*
                 ------------------------------------------
+                MESSAGE
+                ------------------------------------------
+                */
+
+                const enquiryMessage =
+                    message ||
+                    "I would like to connect with you regarding your portfolio and professional opportunities.";
+
+
+                /*
+                ------------------------------------------
                 PROFESSIONAL EMAIL BODY
                 ------------------------------------------
                 */
@@ -263,7 +295,11 @@ I hope you're doing well.
 
 My name is ${name}, and I came across your portfolio. I'd like to connect with you and learn more about your work and opportunities to collaborate.
 
-You can reach me at ${email}.
+My email address is:
+${email}
+
+My message:
+${enquiryMessage}
 
 I look forward to hearing from you.
 
@@ -291,7 +327,7 @@ ${name}`;
                 */
 
                 showFormPopup(
-                    "Gmail is opening with your email ready to send."
+                    "Gmail is opening with your enquiry ready to send."
                 );
 
 
@@ -396,7 +432,7 @@ ${name}`;
 
 
         /*
-        Support the existing CSS as well.
+        Support the existing CSS.
         */
 
         formPopup.style.display =
