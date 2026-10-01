@@ -560,8 +560,10 @@ h1 {
 
 
 .button-linkedin .linkedin-icon {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
+
+    display: block;
 
     fill: currentColor;
 
@@ -1505,8 +1507,10 @@ h1 {
 
 
 .linkedin-icon-box .linkedin-icon {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
+
+    display: block;
 
     fill: currentColor;
 }
@@ -1945,8 +1949,10 @@ h1 {
 
 
 .footer-linkedin .linkedin-icon {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
+
+    display: block;
 
     fill: currentColor;
 }
@@ -2853,6 +2859,12 @@ h1 {
     .linkedin-icon-box {
         width: 36px;
         height: 36px;
+    }
+
+
+    .linkedin-icon-box .linkedin-icon {
+        width: 22px;
+        height: 22px;
     }
 
 
