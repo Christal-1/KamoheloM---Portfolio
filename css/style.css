@@ -1704,28 +1704,34 @@ h1 {
 
     grid-template-columns: 1fr 1fr;
 
-    gap: 16px;
+    gap: 12px;
 
-    margin-top: 30px;
+    margin-top: 24px;
 }
 
 
+/* NAME + EMAIL FIELDS */
 .contact-form input {
     width: 100%;
 
-    min-height: 54px;
+    height: 44px;
+    min-height: 44px;
 
-    padding: 16px 18px;
+    padding: 10px 14px;
 
     border: 1px solid var(--line);
 
-    border-radius: 12px;
+    border-radius: 10px;
 
     background: rgba(255, 255, 255, 0.04);
 
     color: var(--ink);
 
     outline: none;
+
+    font-size: 13px;
+
+    line-height: 1.2;
 
     transition:
         border-color 0.2s ease,
@@ -1749,10 +1755,12 @@ h1 {
 }
 
 
+/* SUBMIT BUTTON */
 .contact-submit {
     grid-column: 1 / -1;
 
-    min-height: 54px;
+    height: 46px;
+    min-height: 46px;
 
     display: inline-flex;
 
@@ -1761,11 +1769,11 @@ h1 {
 
     gap: 12px;
 
-    padding: 16px 20px;
+    padding: 10px 20px;
 
     border: 0;
 
-    border-radius: 12px;
+    border-radius: 10px;
 
     background: var(--dark);
 
@@ -2830,6 +2838,22 @@ h1 {
         grid-template-columns: 1fr;
 
         margin-top: 24px;
+
+        gap: 12px;
+    }
+
+
+    /* COMPACT MOBILE NAME + EMAIL FIELDS */
+    .contact-form input {
+        width: 100%;
+
+        height: 44px;
+        min-height: 44px;
+        min-width: 0;
+
+        padding: 10px 14px;
+
+        font-size: 13px;
     }
 
 
@@ -2837,15 +2861,9 @@ h1 {
         grid-column: auto;
 
         width: 100%;
-    }
 
-
-    .contact-form input {
-        width: 100%;
-
-        min-width: 0;
-
-        padding: 15px 16px;
+        height: 46px;
+        min-height: 46px;
     }
 
 
@@ -3056,6 +3074,23 @@ h1 {
 
     .linkedin-text small {
         display: none;
+    }
+
+
+    /* EXTRA COMPACT FORM ON VERY SMALL SCREENS */
+    .contact-form input {
+        height: 42px;
+        min-height: 42px;
+
+        padding: 9px 12px;
+
+        font-size: 12px;
+    }
+
+
+    .contact-submit {
+        height: 44px;
+        min-height: 44px;
     }
 
 }
