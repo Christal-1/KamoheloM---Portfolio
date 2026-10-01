@@ -261,18 +261,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const subject =
                     `Portfolio Enquiry — ${name}`;
 
-
-                /*
-                ------------------------------------------
-                MESSAGE
-                ------------------------------------------
-                */
-
-                const enquiryMessage =
-                    message ||
-                    "I would like to connect with you regarding your portfolio and professional opportunities.";
-
-
                 /*
                 ------------------------------------------
                 PROFESSIONAL EMAIL BODY
