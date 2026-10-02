@@ -1,9 +1,15 @@
-const CACHE_NAME = "kamohelo-portfolio-v1";
+const CACHE_NAME = "kamohelo-portfolio-v2";
 
 const FILES_TO_CACHE = [
     "./",
     "./index.html",
+    "./about.html",
+    "./capabilities.html",
+    "./work.html",
+    "./journey.html",
+    "./contact.html",
     "./css/style.css",
+    "./css/page-shell.css",
     "./js/main.js",
     "./manifest.json",
     "./assets/images/profile/profile.jpg",
@@ -74,40 +80,21 @@ FETCH
 
 self.addEventListener("fetch", event => {
 
-    /*
-    Only handle normal GET requests.
-    */
-
     if (event.request.method !== "GET") {
         return;
     }
-
 
     event.respondWith(
 
         caches.match(event.request)
             .then(cachedResponse => {
 
-                /*
-                Use cached version if available.
-                */
-
                 if (cachedResponse) {
                     return cachedResponse;
                 }
 
-
-                /*
-                Otherwise request it from the network.
-                */
-
                 return fetch(event.request)
                     .then(networkResponse => {
-
-                        /*
-                        Save successful responses
-                        for future visits.
-                        */
 
                         if (
                             networkResponse &&
@@ -115,8 +102,7 @@ self.addEventListener("fetch", event => {
                             networkResponse.type === "basic"
                         ) {
 
-                            const responseToCache =
-                                networkResponse.clone();
+                            const responseToCache = networkResponse.clone();
 
                             caches.open(CACHE_NAME)
                                 .then(cache => {
@@ -129,7 +115,6 @@ self.addEventListener("fetch", event => {
                                 });
 
                         }
-
 
                         return networkResponse;
 
