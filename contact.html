@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Connect with Kamohelo Makhalemele.">
+    <meta name="author" content="Kamohelo Makhalemele">
+    <meta name="theme-color" content="#0b1511">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Kamohelo M.">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+    <title>Contact | Kamohelo M.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/page-shell.css">
+</head>
+<body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html" aria-label="Kamohelo Makhalemele home">
+                <span class="brand-mark">K<span>.</span></span>
+                <span class="brand-name">KAMOHELO MAKHALEMELE <span>/</span> PORTFOLIO</span>
+            </a>
+            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation" type="button">
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="main-navigation" aria-label="Main navigation">
+                <a href="index.html"><span>01</span> Home</a>
+                <a href="about.html"><span>02</span> About</a>
+                <a href="capabilities.html"><span>03</span> Capabilities</a>
+                <a href="work.html"><span>04</span> Work</a>
+                <a href="journey.html"><span>05</span> Journey</a>
+                <a href="contact.html" class="active nav-cta">Let's connect <span aria-hidden="true">↗</span></a>
+            </nav>
+        </div>
+    </header>
+    <main id="main-content">
+        <section class="section page-shell">
+            <div class="section-heading reveal">
+                <p class="eyebrow">05 / CONTACT</p>
+                <h2>Let's connect.</h2>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-card reveal">
+                    <span class="profile-label">LINKEDIN</span>
+                    <h3>Connect professionally</h3>
+                    <p>Let's connect on LinkedIn and talk about strategy, commercial thinking, product opportunities and future collaboration.</p>
+                    <a class="button button-primary" href="https://www.linkedin.com/in/kamohelo-makhalemele/" target="_blank" rel="noopener noreferrer">
+                        <span>Open LinkedIn</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+                <div class="contact-card reveal delay-1">
+                    <span class="profile-label">EMAIL</span>
+                    <h3>Get in touch</h3>
+                    <p>If you'd like to discuss opportunities, collaborations or projects, feel free to reach out directly.</p>
+                    <a class="button button-secondary" href="mailto:kmakhalemele174@gmail.com">
+                        <span>Email me</span>
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+                <div class="contact-card reveal delay-2">
+                    <span class="profile-label">FORM</span>
+                    <h3>Quick enquiry</h3>
+                    <p>Send a brief message and I'll get back to you.</p>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <label for="name">Name</label>
+                            <input type="text" name="name" id="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Your email" required>
+                        </div>
+                        <button class="button button-primary" type="submit">
+                            <span>Send enquiry</span>
+                            <span aria-hidden="true">↗</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div id="formPopup" class="form-popup" style="display:none;"></div>
+        </section>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>
